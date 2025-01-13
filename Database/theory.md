@@ -77,7 +77,7 @@
 
 ## 데이터베이스 관리 시스템(DBMS)의 역할과 구조
 
-![](./image/DBMS.jpg)
+![](./image/DBMS.png)
 
 **정보 시스템**
 
