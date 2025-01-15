@@ -1032,7 +1032,6 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **단점:**
 - 퍼즐이 복잡할수록 탐색 시간이 증가
-# 그리디 알고리즘 (Greedy Algorithm)
 
 **실습 코드**
 <details>
@@ -1041,6 +1040,8 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
   ```python
   ```
 </details>
+
+# 그리디 알고리즘 (Greedy Algorithm)
 
 ## 개념 및 특징
 
