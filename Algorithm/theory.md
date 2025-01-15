@@ -280,7 +280,7 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-  <summary>Merge Sort - Python</summary>
+  <summary>Quick Sort - Python</summary>
   
   ```python
 def quick_sort(arr):
@@ -332,6 +332,52 @@ print("Sorted array:", sorted_data)
 
 **활용:**
 - 메모리 사용이 제한적인 경우 적합
+
+**실습 코드**
+<details>
+  <summary>Heap Sort - Python</summary>
+  
+  ```python
+def heapify(arr, n, i):
+    largest = i  # 루트를 가장 큰 값으로 초기화
+    left = 2 * i + 1  # 왼쪽 자식 노드
+    right = 2 * i + 2  # 오른쪽 자식 노드
+
+    # 왼쪽 자식이 루트보다 크면 largest 업데이트
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+
+    # 오른쪽 자식이 largest보다 크면 largest 업데이트
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+
+    # largest가 루트가 아니라면 스왑 후 재귀적으로 힙 구조 재정렬
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    # 배열을 최대 힙으로 변환
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # 하나씩 힙에서 요소를 추출하여 정렬
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # 현재 루트(최대값)과 끝 요소를 교환
+        heapify(arr, i, 0)  # 남은 힙에 대해 재정렬
+
+    return arr
+
+# 테스트
+data = [12, 11, 13, 5, 6, 7]
+print("Unsorted array:", data)
+
+sorted_data = heap_sort(data)
+print("Sorted array:", sorted_data)
+  ```
+</details>
 
 ---
 
