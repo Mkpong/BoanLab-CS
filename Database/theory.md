@@ -981,6 +981,7 @@
         - 처리 과정 모두 성공 시에만 최종적으로 데이터베이스에 반영
 
 ![](./image/Transaction_2.png)
+> 위 그림은 트랜잭션의 작업 흐름을 나타내며, COMMIT 이전의 작업(INSERT, DELETE)은 데이터베이스에 영구적으로 반영되고 COMMIT 이후 작업(UPDATE, DELETE, INSERT)은 ROLLBACK 시 원상태로 복구됨
 
 ---
 
