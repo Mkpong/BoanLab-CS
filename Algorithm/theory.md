@@ -1009,6 +1009,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - N 값이 클수록 탐색 시간이 증가
 
+**실습 코드**
+<details>
+  <summary>N-Queens - Python</summary>
+  
+  ```python
+  ```
+</details>
+
 #### Sudoku Solver
 
 **정의:**
@@ -1025,6 +1033,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - 퍼즐이 복잡할수록 탐색 시간이 증가
 # 그리디 알고리즘 (Greedy Algorithm)
+
+**실습 코드**
+<details>
+  <summary>Sudoku Solver - Python</summary>
+  
+  ```python
+  ```
+</details>
 
 ## 개념 및 특징
 
@@ -1070,6 +1086,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - 특정 동전 조합에서는 최적해가 되지 않을 수 있음
 
+**실습 코드**
+<details>
+  <summary>Coin Change Problem - Python</summary>
+  
+  ```python
+  ```
+</details>
+
 ---
 
 ### 활동 선택 문제 (Activity Selection Problem)
@@ -1090,6 +1114,47 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **단점:**
 - 정렬 과정이 필요하여 초기 오버헤드 발생 가능
+
+**실습 코드**
+<details>
+  <summary>Activity Selection Problem - Python</summary>
+  
+  ```python
+def activity_selection(activities):
+    # 종료 시간을 기준으로 활동 정렬
+    activities.sort(key=lambda x: x[1])
+
+    selected_activities = []  # 선택된 활동 저장
+    last_end_time = 0  # 마지막으로 선택된 활동의 종료 시간
+
+    for activity in activities:
+        start, end = activity
+        # 현재 활동이 마지막으로 선택된 활동과 겹치지 않는 경우 선택
+        if start >= last_end_time:
+            selected_activities.append(activity)
+            last_end_time = end
+
+    return selected_activities
+
+# 테스트
+activities = [
+    (1, 4),  # 활동 1: 시작 시간 1, 종료 시간 4
+    (3, 5),  # 활동 2
+    (0, 6),  # 활동 3
+    (5, 7),  # 활동 4
+    (3, 8),  # 활동 5
+    (5, 9),  # 활동 6
+    (6, 10), # 활동 7
+    (8, 11), # 활동 8
+    (8, 12), # 활동 9
+    (2, 13), # 활동 10
+    (12, 14) # 활동 11
+]
+
+result = activity_selection(activities)
+print("Selected activities:", result)
+  ```
+</details>
 
 ---
 
@@ -1284,6 +1349,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **활용:**
 - 자원 최적화, 비용 최소화 문제
 
+**실습 코드**
+<details>
+  <summary>Knapsack Problem - Python</summary>
+  
+  ```python
+  ```
+</details>
+
 ---
 
 ### 최장 공통 부분 수열 (LCS: Longest Common Subsequence)
@@ -1309,6 +1382,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **활용:**
 - DNA 서열 분석, 텍스트 편집기 구현
 
+**실습 코드**
+<details>
+  <summary>LCS - Python</summary>
+  
+  ```python
+  ```
+</details>
+
 ---
 
 ### 최장 증가 부분 수열 (LIS: Longest Increasing Subsequence)
@@ -1332,6 +1413,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **활용:**
 - 데이터 분석, 패턴 인식
+
+**실습 코드**
+<details>
+  <summary>LIS - Python</summary>
+  
+  ```python
+  ```
+</details>
 
 ---
 
@@ -1357,6 +1446,15 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **활용:**
 - 네트워크 경로 최적화, 지도 데이터 처리
+
+**실습 코드**
+<details>
+  <summary>Floyd Warshall - Python</summary>
+  
+  ```python
+  ```
+</details>
+
 ---
 # 그래프 알고리즘 (Graph Algorithms)
 
@@ -1644,6 +1742,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **활용:**
 - 텍스트 에디터 검색 기능, 문자열 매칭 문제
+
+**실습 코드**
+<details>
+  <summary>KMP - Python</summary>
+  
+  ```python
+  ```
+</details>
 
 ---
 
