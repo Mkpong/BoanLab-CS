@@ -280,7 +280,7 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-  <summary>Quick Sort - Python</summary>
+  <summary>Merge Sort - Python</summary>
   
   ```python
 def quick_sort(arr):
