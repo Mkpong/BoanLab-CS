@@ -144,23 +144,27 @@ print("Sorted array:", sorted_data)
   <summary>Insertion Sort - Python</summary>
   
   ```python
-def selection_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        # 현재 정렬되지 않은 부분에서 최소값을 찾음
-        min_index = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        # 최소값을 현재 위치로 스왑
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+def insertion_sort(arr):
+    # 첫 번째 요소는 이미 정렬된 것으로 간주하므로 두 번째 요소부터 시작
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+
+        # key 값이 정렬된 부분의 값보다 작으면 위치를 이동
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        # key 값을 올바른 위치에 삽입
+        arr[j + 1] = key
+
     return arr
 
 # 테스트
-data = [64, 25, 12, 22, 11]
+data = [12, 11, 13, 5, 6]
 print("Unsorted array:", data)
 
-sorted_data = selection_sort(data)
+sorted_data = insertion_sort(data)
 print("Sorted array:", sorted_data)
   ```
 </details>
@@ -193,6 +197,59 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 대규모 데이터 정렬에 적합
 
+**실습 코드**
+<details>
+  <summary>Merge Sort - Python</summary>
+  
+  ```python
+def merge_sort(arr):
+    if len(arr) > 1:
+        # 배열을 두 개로 나누기
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        # 각각 재귀적으로 정렬
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        # 두 개의 정렬된 배열을 병합
+        i = j = k = 0
+
+        # 작은 값을 차례로 삽입
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        # 왼쪽 배열에 남은 값을 삽입
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        # 오른쪽 배열에 남은 값을 삽입
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+    return arr
+
+# 테스트
+data = [38, 27, 43, 3, 9, 82, 10]
+print("Unsorted array:", data)
+
+sorted_data = merge_sort(data)
+print("Sorted array:", sorted_data)
+  ```
+</details>
+
+
 ---
 
 ### 퀵 정렬 (Quick Sort)
@@ -220,6 +277,33 @@ print("Sorted array:", sorted_data)
 
 **활용:**
 - 데이터 크기가 큰 경우 적합
+
+**실습 코드**
+<details>
+  <summary>Quick Sort - Python</summary>
+  
+  ```python
+def quick_sort(arr):
+    # 배열의 길이가 1 이하인 경우 이미 정렬된 상태
+    if len(arr) <= 1:
+        return arr
+
+    # 피벗 선택 (여기서는 배열의 마지막 요소를 피벗으로 선택)
+    pivot = arr[-1]
+    left = [x for x in arr[:-1] if x <= pivot]  # 피벗보다 작거나 같은 값
+    right = [x for x in arr[:-1] if x > pivot]  # 피벗보다 큰 값
+
+    # 재귀적으로 정렬 후 병합
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+# 테스트
+data = [10, 80, 30, 90, 40, 50, 70]
+print("Unsorted array:", data)
+
+sorted_data = quick_sort(data)
+print("Sorted array:", sorted_data)
+  ```
+</details>
 
 ---
 
