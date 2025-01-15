@@ -34,7 +34,10 @@
 - 소규모 데이터의 간단한 정렬에 사용
 
 **실습 코드**
-
+<details>
+  <summary><b>Bubble Sort - C</b></summary>
+  <!-- 내용 -->
+</details>
 
 ---
 
