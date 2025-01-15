@@ -752,7 +752,7 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
  
 **실습 코드**
 <details>
-  <summary>Bubble Sort - Python</summary>
+  <summary>Hash-based Search - Python</summary>
   
   ```python
   ```
