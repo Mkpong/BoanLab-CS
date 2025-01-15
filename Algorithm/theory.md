@@ -749,6 +749,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
   - 충돌 관리가 필요하며, 해시 함수 설계에 따라 성능이 좌우됨
 - **활용**:
   - 키-값 쌍 기반 데이터 검색 (예: 해시 테이블)
+ 
+**실습 코드**
+<details>
+  <summary>Bubble Sort - Python</summary>
+  
+  ```python
+  ```
+</details>
 
 ---
 
