@@ -87,7 +87,7 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-  <summary>Selection Sort - Python</summary>
+  <summary>Bubble Sort - Python</summary>
   
   ```python
 def selection_sort(arr):
