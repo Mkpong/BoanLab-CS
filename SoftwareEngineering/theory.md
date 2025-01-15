@@ -82,14 +82,14 @@
     - 폭포수 모델
         - 개발 프로세스가 순차적으로 진행되는 전통적인 모델입니다. 각 단계가 끝난 후에야 다음 단계로 넘어가므로 유연성이 부족함
         
-        ![SE1.png](/SE_Final_image/SE1.png)
+        ![SE1.png](./image/SE1.png)
         
         > 전통적 SDLC 모델인 폭포수 모델 도식화
         > 
     - V-모델
         - 폭포수 모델을 확장한 것으로, 각 개발 단계마다 대응되는 테스트 단계가 존재하여 개발과 테스트가 동시에 진행됨
         
-        ![SE2.png](/SE_Final_image/SE2.png)
+        ![SE2.png](./image/SE2.png)
         
         > 전통적 SDLC 모델인 V-모델 도식화
         > 
@@ -103,7 +103,7 @@
 - DevOps와 CI/CD
     - 개발과 운영을 통합하여 빠른 소프트웨어 배포를 지향하며, 지속적인 통합(CI)과 지속적인 배포(CD)를 통해 소프트웨어의 품질을 유지함
     
-    ![SE3.jpeg](/SE_Final_image/SE3.jpeg)
+    ![SE3.jpeg](./image/SE3.jpeg)
     
     > 현대적 SDLC 모델인 DevOps, CI/CI 도식화
     > 
@@ -116,7 +116,7 @@
 
 - 요구 사항의 정의와 중요성
     
-    ![SE4.png](/SE_Final_image/SE4.png)
+    ![SE4.png](./image/SE4.png)
     
     > 요구사항 분석 도식화
     > 
@@ -168,7 +168,7 @@
     - 세부 기법
         - 인터뷰: 사용자나 관련자와의 인터뷰를 통해 요구사항을 수집
         
-        ![SE5.png](/SE_Final_image/SE5.png)
+        ![SE5.png](./image/SE5.png)
         
         > 요구사항 수집을 위한 인터뷰 수행 절차 도식화
         > 
@@ -600,7 +600,7 @@
         - 소프트웨어 설계 문서화
             - 설계 검증 및 변경 관리
     
-    ![SE6.png](/SE_Final_image/SE6.png)
+    ![SE6.png](./image/SE6.png)
     
     > UML(Unified Modeling Language)의 발전과정
     > 
@@ -1149,12 +1149,12 @@
     - 활용
         - 소프트웨어 개발 로드맵 작성, 마일스톤 설정
     
-    ![SE7.png](/SE_Final_image/SE7.png)
+    ![SE7.png](./image/SE7.png)
     
     > 작업 분해 구조 WBS는 다음 사진과 같음
     > 
     
-    ![SE8.png](/SE_Final_image/SE8.png)
+    ![SE8.png](./image/SE8.png)
     
     > 마일스톤은 흘러드는 모든 단위 작업이 끝나기 전까지 종료된 것으로 생각하지 않는 단위 작업 또는 사건을 뜻함 개발자들은 보통 사진과 같은 gantt chart(간트차트 또는 갠트 차트) 를 사용함 이 외에도 네트워크 차트(PERT/CPM)이 있음
     > 
@@ -1186,7 +1186,7 @@
             5. 형상 관리자(CM), 품질 관리자*(QE), 연락 그룹
         - 프로젝트 팀 구조
             
-            ![SE9.png](/SE_Final_image/SE9.png)
+            ![SE9.png](./image/SE9.png)
             
             > 프로젝트 팀 구조 도식화
             > 
