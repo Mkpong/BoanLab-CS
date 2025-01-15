@@ -63,6 +63,8 @@ print("Sorted array:", sorted_data)
 
 ### 선택 정렬 (Selection Sort)
 
+![](./image/2.png)
+
 **정의:**
 - 리스트에서 가장 작은 요소를 선택하여 정렬 수행
 - 첫 번째부터 마지막까지 반복적으로 수행
@@ -116,7 +118,7 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 삽입 정렬 (Insertion Sort)
-
+![](./image/3.png)
 **정의:**
 - 각 요소를 적절한 위치에 삽입하여 정렬 수행
 - 초기 정렬된 부분과 정렬되지 않은 부분으로 나뉨
@@ -174,7 +176,7 @@ print("Sorted array:", sorted_data)
 ## 고급 정렬 알고리즘
 
 ### 병합 정렬 (Merge Sort)
-
+![](./image/4.png)
 **정의:**
 - 분할 정복(divide and conquer) 방식의 정렬 알고리즘
 - 데이터를 반으로 나눈 후 병합하여 정렬 수행
@@ -255,7 +257,7 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 퀵 정렬 (Quick Sort)
-
+![](./image/5.png)
 **정의:**
 - 분할 정복 방식의 효율적인 정렬 알고리즘
 - 기준(pivot)을 중심으로 정렬 수행
