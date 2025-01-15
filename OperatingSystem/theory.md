@@ -94,7 +94,7 @@
 
 ### 사용자 모드(User Mode) vs 커널 모드(Kernel Mode)
 
-![1-2.png](OS/1-2.png)
+![1-2.png](./image/1-2.png)
 
 > 위 그림은 사용자 모드(User Mode)와 커널 모드(Kernel Mode)간의 관계를 보여주며, 시스템 호출(System Call)을 통해 응용 프로그램이 시스템 자원(Resource)에 접근하는 과정을 나타냄
 >  
@@ -205,7 +205,7 @@
     - 운영체제에서 **실행 중인 프로그램**을 의미하는 독립적인 실행 단위
     - 실행에 필요한 자원(코드, 데이터, 스택, 힙)과 현재 상태 정보를 포함
     
-    ![2-1.png](OS/2-1.png)
+    ![2-1.png](./image/2-1.png)
     
     > 위 그림은 운영체제에서 각각의 프로세스가 독립적인 메모리 공간(Code, Data, Stack, Heap)을 가지며 서로 격리되어 실행됨을 보여줌
     > 
@@ -244,7 +244,7 @@
         
         **상태전이도:**
         
-        ![2-2.png](OS/2-2.png)
+        ![2-2.png](./image/2-2.png)
         
         > 위 그림은 프로세스의 상태 전이를 나타내며, `New` 상태에서 시작해 `Terminated` 상태로 종료되는 과정을 설명함
         > 
@@ -273,7 +273,7 @@
     - 프로세스 내에서 실행되는 작은 실행 단위
     - 동일한 프로세스 내에서 메모리와 자원을 공유하며 독립적으로 실행되는 제어의 흐름
         
-        ![2-3.png](OS/2-3.png)
+        ![2-3.png](./image/2-3.png)
         
         > 위 그림은 하나의 프로세스 내에서 스레드들이 Code, Data, Heap 메모리를 공유하며, 각 스레드는 독립적인 Stack을 가지는 구조를 보여줌
         > 
@@ -368,7 +368,7 @@
     - 타임 퀀텀 종료 시 프로세스는 대기열의 끝으로 이동
     - 모든 프로세스가 완료될 때까지 반복
         
-        ![2-4.png](OS/2-4.png)
+        ![2-4.png](./image/2-4.png)
         
         > 위 그림은 타임 퀀텀 4인 Round Robin 스케줄링에서 P1, P2, P3 프로세스가 도착 순서대로 4단위 시간씩 CPU를 번갈아가며 할당받아 실행되는 것을 보여줌
         > 
@@ -392,7 +392,7 @@
     - 프로세스 도착 시 우선순위를 확인
     - 높은 우선순위의 작업이 있으면 먼저 실행
         
-        ![2-5.png](OS/2-5.png)
+        ![2-5.png](./image/2-5.png)
         
         > 위 그림은 Priority Scheduling에서 프로세스가 우선순위에 따라 P2, P5, P1, P3, P4 순서대로 CPU를 할당받아 실행되는 것을 보여줌
         > 
@@ -416,7 +416,7 @@
     - 타임 퀀텀 소진 시 낮은 우선순위로 이동
     - 주기적으로 우선순위를 높이는 Periodic Boosting을 사용
         
-        ![2-6.png](OS/2-6.png)
+        ![2-6.png](./image/2-6.png)
         
         > 위 그림은 Multi-Level Queue 스케줄링에서 프로세스를 우선순위에 따라 real-time processes, system processes, interactive processes, batch processes 순서로 분류하여 높은 우선순위부터 실행하는 구조를 보여줌
         > 
@@ -460,7 +460,7 @@
     - 도착한 순서대로 대기열에 추가
     - 대기열의 첫 번째 프로세스를 실행
         
-        ![2-7.png](OS/2-7.png)
+        ![2-7.png](./image/2-7.png)
         
         > 위 그림은 Multi-Level Queue 스케줄링에서 프로세스를 우선순위에 따라 real-time processes, system processes, interactive processes, batch processes 순서로 분류하여 높은 우선순위부터 실행하는 구조를 보여줌
         > 
@@ -483,7 +483,7 @@
     - 대기 중인 작업의 CPU Burst Time을 비교
     - 가장 짧은 작업을 CPU에 할당
         
-        ![2-8.png](OS/2-8.png)
+        ![2-8.png](./image/2-8.png)
         
         > 위 그림은 SJF(Shortest Job First) 스케줄링에서 Burst Time이 낮은 순서대로 P4, P1, P3, P2 프로세스가 CPU를 할당받아 실행되는 것을 보여줌
         > 
@@ -831,7 +831,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
         
 
-![2-9.png](OS/2-9.png)
+![2-9.png](./image/2-9.png)
 
 > 이 다이어그램은 조건 변수를 사용해 **스레드의 작업 수행을 조율하는 방식**을 시각적으로 표현한 것으로, 뮤텍스를 통해 임계 구역을 보호하며, 조건이 충족되지 않을 경우 스레드를 대기 상태로 보내고, 조건 충족 시 대기 중인 스레드가 작업을 이어갈 수 있음을 보여줌
 > 
@@ -860,7 +860,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - **동작 방식**:
         - 자원이 이미 한 프로세스에 의해 점유되었을 경우, 다른 프로세스는 해당 자원이 해제될 때까지 대기
             
-            ![2-10.png](OS/2-10.png)
+            ![2-10.png](./image/2-10.png)
             
         
         > 위 그림은 프로세스 P1이 공유 메모리(임계 영역)에 먼저 진입하여 작업 중일 때, P2가 동일 영역에 접근하려다 실패하는 상황을 보여줌
@@ -887,7 +887,7 @@ pthread_mutex를 사용한 임계 구역 관리
         - 점유된 자원이 반환될 때까지 대기 중인 프로세스는 진입 불가
 - **순환 대기 (Circular Wait)**:
     
-    ![2-11.png](OS/2-11.png)
+    ![2-11.png](./image/2-11.png)
     
     > 교착상태의 조건 중 하나인 순환대기 상태
     > 
@@ -1026,7 +1026,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - 데이터 저장 비용이 매우 저렴하지만, 접근 속도가 느림
     - 내구성이 제한적임
 
-![4-1.png](OS/4-1.png)
+![4-1.png](./image/4-1.png)
 
 > 위 그림은 **메모리 계층 구조**를 나타내며, 저장 장치의 **속도, 용량, 비용** 간의 상관관계를 보여줌
 위쪽으로 갈수록 빠르고 용량이 작으며, 아래로 갈수록 느리고 용량이 커짐
@@ -1066,7 +1066,7 @@ pthread_mutex를 사용한 임계 구역 관리
     2. **동적 재배치(Dynamic relocation):** 재배치 레지스터를 사용하여 주소를 재배치
         - **재배치 레지스터(relocation register)**: 물리 주소로 변환할 기준 레지스터
 
-![4-2.png](OS/4-2.png)
+![4-2.png](./image/4-2.png)
 
 > 위 그림은 재배치 레지스터(Relocation Register)를 사용하여 논리 주소(Logical Address)를 물리 주소(Physical Address)로 변환하는 과정을 보여줌
 > 
@@ -1170,7 +1170,7 @@ pthread_mutex를 사용한 임계 구역 관리
         - 1: 유효한 세그먼트
     - **Protection Bits:** 읽기/쓰기/실행 권한
 
-![4-3.png](OS/4-3.png)
+![4-3.png](./image/4-3.png)
 
 > 위 그림은 세그멘테이션(Segmentation)을 이용해 논리 주소 공간의 세그먼트가 **세그먼트 테이블**을 통해 물리 주소 공간으로 매핑되는 과정을 보여줌
 > 
@@ -1212,7 +1212,7 @@ pthread_mutex를 사용한 임계 구역 관리
         - 각 프로세스는 코드와 데이터를 별도로 복사하여 사용
         - 개별 코드와 데이터의 페이지는 논리 주소 공간 어디에서나 존재할 수 있음
 
-![4-4.png](OS/4-4.png)
+![4-4.png](./image/4-4.png)
 
 > 위 그림은 논리 주소(Logical Address)가 페이지 테이블을 통해 물리 주소(Physical Address)로 변환되는 과정을 보여줌
 > 
@@ -1239,7 +1239,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - **Demand paging**
     - **Demand segmentation**
 
-![4-5.png](OS/4-5.png)
+![4-5.png](./image/4-5.png)
 
 > 가상 메모리
 > 
@@ -1255,7 +1255,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - **heap**: 최소 논리 주소에서 시작
     - **hole**: stack ↔ heap 사이의 공간으로, 동적 링크 라이브러리 등을 위한 희소 주소 공간
 
-![4-6.png](OS/4-6.png)
+![4-6.png](./image/4-6.png)
 
 > 프로세스의 가상 메모리 공간
 > 
@@ -1323,7 +1323,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - **페이지 교체 알고리즘(Page Replacement)**: 어떤 페이지를 교체해야 할지 결정
         - 목표: 첫 접근과 재접근 모두에서 가장 낮은 페이지 결함률을 유지하는 것
 
-![4-7.png](OS/4-7.png)
+![4-7.png](./image/4-7.png)
 
 > 페이지 교체
 > 
@@ -1430,7 +1430,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - **페이지 결함률 악순환**: 추가된 프로세스가 자원을 과도하게 사용하며 시스템 성능 저하를 초래
 - **Thrashing 정의:** 페이지 교체 작업에 과도한 시간을 소모하여 실질적인 작업이 거의 수행되지 않는 현상
 
-![4-8.png](OS/4-8.png)
+![4-8.png](./image/4-8.png)
 
 > 위 그림은 다중 프로그래밍의 정도(Degree of Multiprogramming)에 따른 CPU 활용도(CPU Utilization)를 나타내며, 스래싱(Thrashing)이 발생하면 CPU 활용도가 급격히 감소하는 현상을 보여줌
 > 
@@ -1494,7 +1494,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **단일 레벨 디렉토리 (Single-Level Directory)**
 
-![5-1.png](OS/5-1.png)
+![5-1.png](./image/5-1.png)
 
 > 이 그림은 **단일 레벨 디렉토리(Single-Level Directory)** 구조를 보여주며, 하나의 디렉토리 아래에 모든 파일이 저장된 형태를 나타냄
 > 
@@ -1510,7 +1510,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **다중 레벨 디렉토리 (Multi-Level Directory)**
 
-![5-2.png](OS/5-2.png)
+![5-2.png](./image/5-2.png)
 
 > 이 그림은 **이중 레벨 디렉토리(Two-Level Directory)** 구조를 보여주며, 각 사용자가 자신의 사용자 파일 디렉토리(User File Directory)를 가지며, 이 디렉토리는 마스터 파일 디렉토리(Master File Directory) 아래에 위치함
 > 
@@ -1526,7 +1526,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **트리 구조 디렉토리 (Tree Structure Directory)**
 
-![5-3.png](OS/5-3.png)
+![5-3.png](./image/5-3.png)
 
 > 이 그림은 트리 구조 디렉토리(Tree-Structured Directory) 구조를 보여주며, 루트 디렉토리(root) 아래에 여러 서브 디렉토리와 파일들이 계층적으로 조직되어 있는 형태를 나타냄
 > 
@@ -1551,7 +1551,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **연속 할당(Contiguous Allocation)**
 
-![5-4.png](OS/5-4.png)
+![5-4.png](./image/5-4.png)
 
 > **연속 할당(Contiguous Allocation)** 방식으로, 파일의 데이터가 디스크 상에서 연속된 블록에 저장되어 있는 모습을 보여줌
 > 
@@ -1574,7 +1574,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **연결 할당(Linked Allocation)**
 
-![5-5.png](OS/5-5.png)
+![5-5.png](./image/5-5.png)
 
 > **연결 할당(Linked Allocation)** 방식으로, 파일의 각 데이터 블록이 포인터로 연결되어 비연속적으로 저장된 모습을 보여줌
 > 
@@ -1597,7 +1597,7 @@ pthread_mutex를 사용한 임계 구역 관리
 
 **색인 할당(Indexed Allocation)**
 
-![5-6.png](OS/5-6.png)
+![5-6.png](./image/5-6.png)
 
 > **색인 할당(Indexed Allocation)** 방식으로, 파일의 데이터 블록 주소가 인덱스 블록에 저장되어 각 데이터 블록에 접근하는 구조를 보여줌
 > 
@@ -2107,7 +2107,7 @@ pthread_mutex를 사용한 임계 구역 관리
         3. 2/5에서 I/O 작업이 진행중에 CPU에서는 다른 일을 수행하고 있을 수 있음
         4. I/O 실행이 끝나면 CPU에게 Interrupt Request를 하게 되고 CPU는 하던 일을 멈추고 I/O에서 전달된 데이터를 처리함
     
-    ![I:O1.png](OS/IO1.png)
+    ![I:O1.png](./image/IO1.png)
     
     > 인터럽트 처리 순서 도식화
     > 
@@ -2182,7 +2182,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - 입출력 제어기에 DMA 제어기가 붙어있음
 - **동작 방식:**
     
-    ![I:O2.png](OS/IO2.png)
+    ![I:O2.png](./image/IO2.png)
     
     > DMA 동작 방식 도식화
     > 
@@ -2401,7 +2401,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - 3DES
     - AES(Advanced Encryption Standard)
 
-![6-1.png](OS/6-1.png)
+![6-1.png](./image/6-1.png)
 
 > 대칭키 암호화 방식 과정을 나타내는 그림
 > 
@@ -2426,7 +2426,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - RSA(Rivest Shamir Adleman)
     - Diffie-Hellman
 
-![6-2.png](OS/6-2.png)
+![6-2.png](./image/6-2.png)
 
 > 공개키 암호화 방식을 나타내는 그림
 > 
@@ -2449,7 +2449,7 @@ pthread_mutex를 사용한 임계 구역 관리
         - 패킷에 담긴 데이터로부터 네트워크를 보호하는 방식
         - 메시지에 바이러스를 포함하고 있으면 게이트웨이가 이를 막아 수신자가 도달하지 못하도록 막음
 
-![6-3.png](OS/6-3.png)
+![6-3.png](./image/6-3.png)
 
 > 방화벽
 > 
@@ -2472,7 +2472,7 @@ pthread_mutex를 사용한 임계 구역 관리
         - 응용프로그램으로부터 기대하는 동작에 대한 모델(예: 시스템 호출 유형)을 만들고, 응용프로그램을 실행할 때 시스템 호출 패턴을 모니터링함
         - 정적 모델과 다른 패턴이 보일 경우, 이를 공격으로 탐지
 
-![6-4.png](OS/6-4.png)
+![6-4.png](./image/6-4.png)
 
 > 위 그림은 IDS(침입 탐지 시스템)와 방화벽(Firewall)이 네트워크 환경에서 내부 자원(네트워크 장비, 서버)을 보호하고, 외부 인터넷으로부터의 보안 위협을 차단하는 과정을 나타냄
 > 
@@ -2539,7 +2539,7 @@ pthread_mutex를 사용한 임계 구역 관리
     - OS가 각 호스트에 있지 않고 전체 네트워크에 공통적으로 실행되는 단일 운영체제 시스템
     - 노드 간의 작업 분배 및 협력을 통해 단일 컴퓨터로 처리하기 어려운 작업을 처리함
         
-        ![DP1.png](OS/DP1.png)
+        ![DP1.png](./image/DP1.png)
         
         > 분산 시스템 도식화
         > 
@@ -2596,7 +2596,7 @@ pthread_mutex를 사용한 임계 구역 관리
     3. 작업 전달: 분배된 요청을 각 서버에 전달
     4. 응답 반환: 서버로부터의 응답을 클라이언트로 전달
 
-![DP2.png](OS/DP2.png)
+![DP2.png](./image/DP2.png)
 
 > 클라이언트 요청을 수신하여 응답 반환 까지의 ‘로드밸런싱’ 도식화
 > 
