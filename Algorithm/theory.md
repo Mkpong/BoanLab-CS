@@ -139,6 +139,32 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 데이터가 거의 정렬된 경우 적합
 
+**실습 코드**
+<details>
+  <summary>Insertion Sort - Python</summary>
+  
+  ```python
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # 현재 정렬되지 않은 부분에서 최소값을 찾음
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        # 최소값을 현재 위치로 스왑
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+
+# 테스트
+data = [64, 25, 12, 22, 11]
+print("Unsorted array:", data)
+
+sorted_data = selection_sort(data)
+print("Sorted array:", sorted_data)
+  ```
+</details>
+
 ## 고급 정렬 알고리즘
 
 ### 병합 정렬 (Merge Sort)
