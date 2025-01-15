@@ -961,6 +961,7 @@
 # 트랜잭션과 동시성 제어
 
 ![](./image/Transaction_1.png)
+> 위 그림은 트랜잭션의 상태 전이를 나타내며, 트랜잭션은 Active(활성 상태)에서 시작하여 성공 시 Partially Committed를 거쳐 Committed로 전환되며 오류 발생 시 Failed로 이동 후 Aborted 상태로 롤백됨
 
 ---
 
