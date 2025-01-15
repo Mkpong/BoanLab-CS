@@ -36,11 +36,10 @@
 **실습 코드**
 <details>
   <summary>Bubble Sort - C</b></summary>
-  <div markdown="1">
+  
   ```python
   print("Hello")
   ```
-  </div>
 </details>
 
 ---
