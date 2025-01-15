@@ -35,7 +35,7 @@
 
 **실습 코드**
 <details>
-  <summary>Bubble Sort - Python</b></summary>
+  <summary>Bubble Sort - Python</summary>
   
   ```python
 def bubble_sort(arr):
@@ -87,7 +87,7 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-  <summary>Selection Sort - Python</b></summary>
+  <summary>Selection Sort - Python</summary>
   
   ```python
 def selection_sort(arr):
