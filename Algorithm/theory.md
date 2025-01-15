@@ -515,6 +515,30 @@ print("Sorted array:", sorted_data)
   - 데이터가 많을수록 성능 저하
 - **활용**:
   - 소규모 데이터나 정렬되지 않은 데이터에서 사용
+ 
+**실습 코드**
+<details>
+  <summary>Linear Search - Python</summary>
+  
+  ```python
+def linear_search(arr, target):
+    # 배열의 각 요소를 순차적으로 확인
+    for i in range(len(arr)):
+        if arr[i] == target:  # 대상 값을 찾으면 인덱스 반환
+            return i
+    return -1  # 대상 값이 없으면 -1 반환
+
+# 테스트
+data = [10, 20, 30, 40, 50]
+target = 30
+
+result = linear_search(data, target)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
+  ```
+</details>
 
 ---
 
@@ -537,6 +561,51 @@ print("Sorted array:", sorted_data)
   - 데이터가 정렬되어 있지 않다면 사용 불가
 - **활용**:
   - 정렬된 데이터에서 효율적으로 탐색할 때 사용
+ 
+**실습 코드**
+<details>
+  <summary>Binary Search - Python</summary>
+  
+  ```python
+def binary_search_recursive(arr, target, low, high):
+    if low > high:
+        return -1  # 대상 값이 없으면 -1 반환
+
+    mid = (low + high) // 2  # 중간 인덱스 계산
+
+    if arr[mid] == target:
+        return mid  # 대상 값 찾음
+    elif arr[mid] > target:
+        return binary_search_recursive(arr, target, low, mid - 1)  # 왼쪽 절반 탐색
+    else:
+        return binary_search_recursive(arr, target, mid + 1, high)  # 오른쪽 절반 탐색
+
+def binary_search_iterative(arr, target):
+    low, high = 0, len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2  # 중간 인덱스 계산
+
+        if arr[mid] == target:
+            return mid  # 대상 값 찾음
+        elif arr[mid] > target:
+            high = mid - 1  # 왼쪽 절반으로 범위 줄이기
+        else:
+            low = mid + 1  # 오른쪽 절반으로 범위 줄이기
+
+    return -1  # 대상 값이 없으면 -1 반환
+
+# 테스트
+data = [10, 20, 30, 40, 50, 60]
+target = 30
+
+result = binary_search_recursive(data, target, 0, len(data) - 1)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
+  ```
+</details>
 
 ---
 
@@ -579,6 +648,87 @@ print("Sorted array:", sorted_data)
   - 트리가 불균형할 경우 성능 저하
 - **활용**:
   - 동적 데이터 탐색 및 관리
+ 
+**실습 코드**
+<details>
+  <summary>Binary Search Tree - Python</summary>
+  
+  ```python
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    # 삽입 함수
+    def insert(self, key):
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert(self.root, key)
+
+    def _insert(self, current, key):
+        if key < current.key:  # 왼쪽에 삽입
+            if current.left is None:
+                current.left = Node(key)
+            else:
+                self._insert(current.left, key)
+        elif key > current.key:  # 오른쪽에 삽입
+            if current.right is None:
+                current.right = Node(key)
+            else:
+                self._insert(current.right, key)
+
+    # 탐색 함수
+    def search(self, key):
+        return self._search(self.root, key)
+
+    def _search(self, current, key):
+        if current is None:
+            return False  # 키를 찾을 수 없음
+        if key == current.key:
+            return True  # 키를 찾음
+        elif key < current.key:
+            return self._search(current.left, key)  # 왼쪽 서브트리 탐색
+        else:
+            return self._search(current.right, key)  # 오른쪽 서브트리 탐색
+
+    # 중위 순회 (Inorder Traversal)
+    def inorder(self):
+        result = []
+        self._inorder(self.root, result)
+        return result
+
+    def _inorder(self, current, result):
+        if current:
+            self._inorder(current.left, result)  # 왼쪽 서브트리
+            result.append(current.key)          # 현재 노드
+            self._inorder(current.right, result)  # 오른쪽 서브트리
+
+# 이진 검색 트리 생성
+bst = BinarySearchTree()
+
+# 노드 삽입
+bst.insert(50)
+bst.insert(30)
+bst.insert(70)
+bst.insert(20)
+bst.insert(40)
+bst.insert(60)
+bst.insert(80)
+
+# 탐색 테스트
+print("Search 40:", bst.search(40))  # True
+print("Search 25:", bst.search(25))  # False
+
+# 중위 순회 결과 출력 (오름차순 정렬된 결과)
+print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
+  ```
+</details>
 
 ---
 
