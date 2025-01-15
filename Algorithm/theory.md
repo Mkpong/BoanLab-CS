@@ -118,7 +118,9 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 삽입 정렬 (Insertion Sort)
+
 ![](./image/3.png)
+
 **정의:**
 - 각 요소를 적절한 위치에 삽입하여 정렬 수행
 - 초기 정렬된 부분과 정렬되지 않은 부분으로 나뉨
@@ -176,7 +178,9 @@ print("Sorted array:", sorted_data)
 ## 고급 정렬 알고리즘
 
 ### 병합 정렬 (Merge Sort)
+
 ![](./image/4.png)
+
 **정의:**
 - 분할 정복(divide and conquer) 방식의 정렬 알고리즘
 - 데이터를 반으로 나눈 후 병합하여 정렬 수행
@@ -257,7 +261,9 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 퀵 정렬 (Quick Sort)
+
 ![](./image/5.png)
+
 **정의:**
 - 분할 정복 방식의 효율적인 정렬 알고리즘
 - 기준(pivot)을 중심으로 정렬 수행
@@ -312,7 +318,9 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 힙 정렬 (Heap Sort)
+
 ![](./image/6.png)
+
 **정의:**
 - 힙 자료구조를 이용한 정렬 알고리즘
 - 최대/최소 힙을 생성하여 정렬 수행
@@ -386,7 +394,9 @@ print("Sorted array:", sorted_data)
 ---
 
 ### 기수 정렬 (Radix Sort)
+
 ![](./image/14.png)
+
 **정의:**
 - 자리수를 기준으로 정렬하는 비비교 기반 정렬 알고리즘
 
@@ -501,7 +511,9 @@ print("Sorted array:", sorted_data)
 ## 기본 탐색 알고리즘
 
 ### 선형 탐색 (Linear Search)
+
 ![](./image/7.png)
+
 - **정의**: 데이터를 처음부터 끝까지 순차적으로 탐색하여 원하는 값을 찾는 알고리즘
 - **특징**:
   - 단순하고 구현이 쉬움
@@ -547,7 +559,9 @@ else:
 ---
 
 ### 이진 탐색 (Binary Search)
+
 ![](./image/8.png)
+
 - **정의**: 정렬된 데이터에서 중간 값을 기준으로 탐색 범위를 절반씩 줄이며 값을 찾는 알고리즘
 - **특징**:
   - 입력 데이터가 정렬되어 있어야 동작
