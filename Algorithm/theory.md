@@ -35,8 +35,10 @@
 
 **실습 코드**
 <details>
-  <summary><b>Bubble Sort - C</b></summary>
-  <!-- 내용 -->
+  <summary>Bubble Sort - C</b></summary>
+  ```python
+  print("Hello")
+  ```
 </details>
 
 ---
