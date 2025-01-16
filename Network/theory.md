@@ -66,7 +66,7 @@
 
 ### OSI 7계층 모델
 
-![OSI](images/OSI.png)
+![OSI](./image/OSI.png)
 
 > OSI 7 Layers
 > 
@@ -142,7 +142,7 @@
 
 **TCP/IP 모델**
 
-![tcpip](images/tcpip.png)
+![tcpip](./image/tcpip.png)
 
 > TCP/IP Model
 > 
@@ -186,7 +186,7 @@
 
 ## 네트워크의 종류 (Types of Networks)
 
-![network](images/network.png)
+![network](./image/network.png)
 
 > Types of networks
 > 
@@ -280,7 +280,7 @@
 
 **SAN(Storage Area Network)**
 
-![san](images/san.png)
+![san](./image/san.png)
 
 > SAN의 통신 과정
 > 
@@ -309,7 +309,7 @@
 
 **스타(Star)**
 
-![star](images/star.png)
+![star](./image/star.png)
 
 > Star 형태의 네트워크
 > 
@@ -332,7 +332,7 @@
 
 **버스(Bus)**
 
-![bus](images/bus.png)
+![bus](./image/bus.png)
 
 > Bus 형태의 네트워크
 > 
@@ -354,7 +354,7 @@
 
 **링(Ring)**
 
-![ring](images/ring.png)
+![ring](./image/ring.png)
 
 > Ring 형태의 네트워크
 > 
@@ -375,7 +375,7 @@
 
 **메시(Mesh)**
 
-![mesh](images/mesh.png)
+![mesh](./image/mesh.png)
 
 > Mesh 형태의 네트워크
 > 
@@ -491,7 +491,7 @@
     1. **전송 측**: 디지털 데이터를 부호화하여 디지털 신호 생성
     2. **수신 측**: 디지털 신호를 복호화하여 원래 데이터를 복원
 
-![DTD](images/DTD.png)
+![DTD](./image/DTD.png)
 
 > 위 그림은 회선 부호화와 복호화하는 과정을 나타냄
 > 
@@ -517,7 +517,7 @@
     2. **계수화 또는 양자화(Quantization)**: 표본화된 진폭 값을 특정한 이산적인 값으로 변환
     3. **부호화(Encoding)**: 양자화된 값(펄스)을 비트 스트림으로 부호화
 
-![PCM](images/PCM.png)
+![PCM](./image/PCM.png)
 
 > 위 그림은 PCM를 통해 아날로그 신호를 디지털 신호로 변환하는 과정을 나타냄
 > 
@@ -565,7 +565,7 @@
     - NRZ 신호의 진폭이 '1'일 때, 송신 주파수의 진폭이 유지됨
     - NRZ 신호의 진폭이 '0'일 때, 송신 주파수의 진폭이 0이 됨
 
-![ASK](images/ASK.png)
+![ASK](./image/ASK.png)
 
 > 위 그림은 이진 ASK의 개념적인 파형을 나타냄
 > 
@@ -594,7 +594,7 @@
         - 입력 전압에 따라 주파수가 변하는 전압제어 발진기(VCXO) 사용
         - NRZ 신호의 진폭에 따라 주파수가 변화함
 
-![FSK](images/FSK.png)
+![FSK](./image/FSK.png)
 
 > 위 그림은 이진 FSK의 개념적인 파형을 나타냄
 > 
@@ -617,7 +617,7 @@
         - 폴라 NRZ 신호: 전압의 상태(양의 전압 or 음의 전압)가 "1"과 "0"을 구분하는 방식으로, 신호가 0으로 되돌아가지 않는(Non-Return-to-Zero) 방식
         - 유니폴 NRZ 신호: 전압의 상태가 하나의 값(예: 양의 전압)을 가지며, "0"과 "1"을 구분하는 방식으로, 신호가 0으로 되돌아가지 않는(Non-Return-to-Zero) 방식
 
-![PSK](images/PSK.png)
+![PSK](./image/PSK.png)
 
 > 위 그림은 이진 PSK의 개념적인 파형을 나타냄
 > 
@@ -645,7 +645,7 @@
     - 반송파의 진폭을 변조 되는 신호의 진폭에 따라 바꿔야 하기 때문에, 일반적으로 단순 곱셈(multiplier)을 사용하여 구현
     - 어떤 경우엔 신호의 절반을 버려 대역폭 절반만 사용하여 구현
 
-![AM](images/AM.png)
+![AM](./image/AM.png)
 
 > 위 그림은 간단한 곱셈기를 사용해 반송파 신호를 AM으로 변조하는 구조를 나타냄
 > 
@@ -669,7 +669,7 @@
 - **구현**:
     - 보통 전압 제어 진동기(VCO)를 사용하여 구현
 
-![FM](images/FM.png)
+![FM](./image/FM.png)
 
 > 위 그림은 VCO를 사용해 FM를 구현하는 구조를 나타냄
 > 
@@ -688,7 +688,7 @@
     - 보통 변화율과 함께 전압에 의해 제어되는 진동기(VCO)를 사용하여 구현
     - 진동기의 주파수는 변조 되는 신호의 진폭이 되는 전압의 변화율에 따라 바뀜
 
-![PM](images/PM.png)
+![PM](./image/PM.png)
 
 > 위 그림은 VCO와 도함수를 사용해 PM를 구현하는 구조를 나타냄
 > 
@@ -726,7 +726,7 @@
     5. **간섭 방지 필요**:
         - 가드 밴드로 신호 간 간섭 방지 가능하지만, 가드 밴드로 인해 일부 대역폭이 낭비될 수 있음
 
-![FDM](images/FDM.png)
+![FDM](./image/FDM.png)
 
 > 위 그림은 전송 경로를 세 부분으로 나누어, 각 채널에서 하나의 전송을 운반하는 FDM의 개념적인 구조를 나타냄
 > 
@@ -746,7 +746,7 @@
         - TDM은 기본적으로 디지털 데이터 다중화 기술임
         - 아날로그 데이터도 샘플링, 디지털 변환 후 TDM을 통해 다중화할 수 있음
 
-![TDM](images/TDM.png)
+![TDM](./image/TDM.png)
 
 > 위 그림은 Input line 1에서 들어오는 모든 데이터가 항상 하나의 특정 목적지(1, 2, 3, 또는 4)으로 전달된다는 것을 보여주는 멀티플렉싱 구조를 나타냄
 > 
@@ -806,7 +806,7 @@
 
 ### 프로토콜의 개념과 역할 (Concept and Role of Protocols)
 
-![Protocols](images/Protocols.png)
+![Protocols](./image/Protocols.png)
 
 > 프로토콜 종류
 > 
@@ -832,7 +832,7 @@
 
 **이더넷(Ethernet)**
 
-![Ethernet](images/Ethernet.png)
+![Ethernet](./image/Ethernet.png)
 
 > Ethernet의 구조
 > 
@@ -854,7 +854,7 @@
 
 **PPP(Point-to-Point Protocol)**
 
-![PPP](images/PPP.png)
+![PPP](./image/PPP.png)
 
 > PPP의 구조
 > 
@@ -876,7 +876,7 @@
 
 **HDLC (High-Level Data Link Control)**
 
-![HDLC](images/HDLC.png)
+![HDLC](./image/HDLC.png)
 
 > HDLC의 구조
 >
@@ -1001,7 +1001,7 @@
             
 - **프레임 처리 (Frame Handling)**
 
-    ![Frame](images/Frame.png)
+    ![Frame](./image/Frame.png)
 
     > 프레임의 구조
     > 
@@ -1030,7 +1030,7 @@
 
 **IPv4와 IPv6 - 구조, 헤더, 주소 체계**
 
-![IP](images/IP.png)
+![IP](./image/IP.png)
 
 > IPv4와 IPv6의 구조
 > 
@@ -1052,7 +1052,7 @@
 
 **ICMP(Internet Control Message Protocol)**
 
-![ICMP](images/ICMP.png)
+![ICMP](./image/ICMP.png)
 
 > 오류를 보고하고 네트워크 운영과 관련된 정보 제공
 >
@@ -1074,7 +1074,7 @@
 
 **ARP(Address Resolution Protocol)**
 
-![ARP](images/ARP.png)
+![ARP](./image/ARP.png)
 
 > LAN 카드를 다른 LAN으로 옮길 수 있음
 
@@ -1116,7 +1116,7 @@
 
 **TCP(Transmission Control Protocol)**
 
-![TCP](images/TCP.png)
+![TCP](./image/TCP.png)
 
 > 연결형 프로토콜로 데이터의 전송 순서 보장
 > 
@@ -1138,7 +1138,7 @@
 
 **UDP(User Datagram Protocol)**
 
-![UDP](images/UDP.png)
+![UDP](./image/UDP.png)
 
 > 비연결형 프로토콜로 데이터의 전송 순서가 바뀔 수 있음
 > 
@@ -1177,7 +1177,7 @@
         - 웹 서비스(HTTP: 80, HTTPS: 443), FTP(21), 이메일(SMTP: 25) 등 다양한 네트워크 서비스에 사용
 - **소켓 프로그래밍 (Socket Programming)**
 
-    - ![Socket_Programming](images/Socket_Programming.png)
+    - ![Socket_Programming](./image/Socket_Programming.png)
 
       > 클라이언트 소켓과 서버 소켓의 실행 흐름
       > 
@@ -1375,7 +1375,7 @@
 
 **HTTP/HTTPS (Web Communication)**
 
-![HTTP_HTTPS](images/HTTP_HTTPS.png)
+![HTTP_HTTPS](./image/HTTP_HTTPS.png)
 
 > HTTP는 암호화되지 않은 방법으로, HTTPS는 암호화된 방법으로 데이터를 전송함
 
@@ -1396,7 +1396,7 @@
 
 **FTP(File Transfer Protocol)**
 
-![FTP](images/FTP.png)
+![FTP](./image/FTP.png)
 
 > 파일 전송 프로토콜 동작 과정
 > 
@@ -1418,7 +1418,7 @@
 
 **SMTP/POP3/IMAP**
 
-![SMTP_POP3_IMAP](images/SMTP_POP3_IMAP.png)
+![SMTP_POP3_IMAP](./image/SMTP_POP3_IMAP.png)
 
 > 이메일 프로토콜 동작 과정
 
@@ -1442,7 +1442,7 @@
 
 **DNS(Domain Name System)**
 
-![DNS](images/DNS.png)
+![DNS](./image/DNS.png)
 
 > DNS 동작과정
 > 
@@ -1464,7 +1464,7 @@
 
 **DHCP (Dynamic Host Configuration Protocol)**
 
-![DHCP](images/DHCP.png)
+![DHCP](./image/DHCP.png)
 
 - **정의**
     - 네트워크 상의 장치에 동적으로 IP 주소를 할당하는 프로토콜
@@ -1498,7 +1498,7 @@
     - 받은 데이터를 단순히 접속된 모든 컴퓨터에 전송
     - 네트워크 전체 대역폭을 노드 수만큼 분할하여 사용
 
-![Hub](images/Hub.png)
+![Hub](./image/Hub.png)
 
 > 위 그림은 허브가 100bps 대역폭을 제공할 때, 허브에 연결된 각 장치가 전체 대역폭을 분배 받는 방식을 나타냄
 > 
@@ -1510,7 +1510,7 @@
     - 받은 데이터에서 수신지 주소를 읽고 그 주소의 컴퓨터로 전송 (스위칭)
     - 각 노드를 점대점으로 연결하여 할당된 대역폭을 보장 받음
 
-![Switch1](images/Switch1.png)
+![Switch1](./image/Switch1.png)
 
 > 위 그림은 스위치가 100bps 대역폭을 제공할 때, 스위치에 연결된 각 장치가 전체 대역폭을 동일하게 할당 받는 방식을 나타냄
 > 
@@ -1546,7 +1546,7 @@
     - **상황 고려 필터(stateful filter)**: 연결 상태를 유지하며 패킷의 흐름을 추적하여, 기존 세션의 상태를 바탕으로 트래픽을 제어
     - **애플리케이션 게이트웨이(application gateway)**: 애플리케이션 계층에서 발생하는 트래픽을 제어하기 위한, 모든 애플리케이션 데이터가 반드시 통과하고 나오는 애플리케이션 맞춤 서버
 
-![Firewall](images/Firewall.png)
+![Firewall](./image/Firewall.png)
 
 > 위 그림은 방화벽 시스템을 통해 외부 네트워크로부터 내부 네트워크를 보호하는 과정을 나타냄
 > 
@@ -1565,12 +1565,12 @@
     - **이상 기반 시스템**
         - 평소 트래픽 분석표에서 통계학적으로 비정상적인 패킷을 탐지
 
-![IDS_IPS1](images/IDS_IPS1.png)
+![IDS_IPS1](./image/IDS_IPS1.png)
 
 > 위 그림은 방화벽과 침입 방지 시스템을 설치하여 외부 네트워크로부터 들어오는 트래픽에서 정상 트래픽만 필터링하고 전달하는 과정을 나타냄
 > 
 
-![IDS_IPS2](images/IDS_IPS2.png)
+![IDS_IPS2](./image/IDS_IPS2.png)
 
 > 위 그림은 네트워크, 장치, 서버로부터 침입을 탐지하기 위한 설치 구조의 예를 나타냄
 > 
@@ -1750,7 +1750,7 @@
 
 **NAT(Network Address Translation)**
 
-![nat](images/nat.png)
+![nat](./image/nat.png)
 
 - **정의**
     - 하나의 공인 IP 주소를 여러 내부 네트워크 장치가 공유할 수 있도록 해주는 기술임
@@ -1857,7 +1857,7 @@
 
 ### 라우팅의 개념 (Routing Concepts)
 
-![Routing](images/Routing.png)
+![Routing](./image/Routing.png)
 
 > 라우팅은 인터넷과 같은 패킷 교환 네트워크에서 IP 패킷이 원본에서 대상으로 이동할 경로를 선택함
 
@@ -1906,7 +1906,7 @@
 
 **내부 라우팅 프로토콜 (Interior Gateway Protocol, IGP)**
 
-![Routing_Protocols](images/Routing_Protocols.png)
+![Routing_Protocols](./image/Routing_Protocols.png)
 
 > 라우팅 프로토콜 종류
 > 
@@ -2002,7 +2002,7 @@
 
 ### 스위치와 데이터 전달 (Switching and Data Transmission)
 
-![Switch2](images/Switch2.png)
+![Switch2](./image/Switch2.png)
 
 >> 스위치는 네트워크 내의 장치를 연결하고 해당 장치와 데이터 패킷을 주고 받음
 
@@ -2012,7 +2012,7 @@
     - 스위치에서 각 포트에 연결된 장치들의 MAC 주소를 기록하여, 데이터 전송 시 이를 기반으로 목적지 포트를 결정
     - 16진수로 구성되며, 각 2자리씩 6개의 그룹으로 나뉨 (예: 00:1A:2B:3C:4D:5E)
      
-    ![MAC](images/MAC.png)
+    ![MAC](./image/MAC.png)
 
     > Mac 주소 구조
                         
@@ -2032,7 +2032,7 @@
 
 **STP (Spanning Tree Protocol)**
 
-![STP](images/STP.png)
+![STP](./image/STP.png)
 
 > 이중 구성된 망에서 논리적으로 하나의 연결 만을 유지하다가 기존 연결이 끊어졌음을 인지하면 다른 연결을 활성화 시키도록 구성
 > 
@@ -2061,7 +2061,7 @@
 
 ### 소극적 공격(passive attack)
 
-![passive_attack](images/passive_attack.png)
+![passive_attack](./image/passive_attack.png)
 
 > 위 그림은 사용자 1의 데이터를 공격자가 탈취하는 소극적 공격의 구조를 나타냄
 > 
@@ -2080,7 +2080,7 @@
 
 ### 적극적 공격(active attack)
 
-![active_attack](images/active_attack.png)
+![active_attack](./image/active_attack.png)
 
 > 위 그림은 사용자 1의 데이터를 공격자가 탈취하여 위장하는 적극적 공격의 구조를 나타냄
 > 
@@ -2135,7 +2135,7 @@
     - 3DES
     - AES(Advanced Encryption Standard)
 
-![Encryption1](images/Encryption1.png)
+![Encryption1](./image/Encryption1.png)
 
 > 위 그림은 대칭키를 암호화하는 방식을 나타냄
 > 
@@ -2160,7 +2160,7 @@
     - RSA(Rivest Shamir Adleman)
     - Diffie-Hellman
 
-![Encryption2](images/Encryption2.png)
+![Encryption2](./image/Encryption2.png)
 
 > 위 그림은 공개키를 암호화하는 방식을 나타냄
 > 
@@ -2192,7 +2192,7 @@
     3. **클라이언트 인증과 키 교환**: 클라이언트는 요청된 인증서를 보내고, 키 교환을 보냄
     4. **종료**: 암호 조합을 교환하고 프로토콜을 종료
 
-![Handshake](images/Handshake.png)
+![Handshake](./image/Handshake.png)
 
 > 위 그림은 서버와 클라이언트 간의 보안 연결을 설정하는 핸드쉐이크 과정을 나타냄
 > 
@@ -2210,7 +2210,7 @@
     - **터널 모드(Tunnel Mode)**
         - IP 패킷 전부를 보호    
 
-![IPsec1](images/IPsec1.png)
+![IPsec1](./image/IPsec1.png)
 
 > 위 그림은 전송 모드 및 터널 모드의 암호화 및 인증 범위를 나타냄
 >
@@ -2257,7 +2257,7 @@
     4. **사용자 편의성**: 별도의 사용자 학습이나 키 관리가 필요 없음
     5. **개별 사용자 보안**: 외부 근무자 및 민감한 애플리케이션을 위한 안전한 가상 네트워크 구축 가능
 
-![IPsec2](images/IPsec2.png)
+![IPsec2](./image/IPsec2.png)
 
 > 위 그림은 IP Security의 프로토콜 구조를 나타냄
 > 
@@ -2384,7 +2384,7 @@
 
 ## 부하 분산과 로드 밸런싱 (Load Balancing)
 
-![loadbalance](images/loadbalance.png)
+![loadbalance](./image/loadbalance.png)
 
 - **정의**
     - 애플리케이션을 지원하는 리소스 풀 전체에 네트워크 트래픽을 균등하게 배포하는 방법
@@ -2420,7 +2420,7 @@
 
 **SDN (Software-Defined Networking)**
 
-![SDN](images/SDN.png)
+![SDN](./image/SDN.png)
 
 > Control Plane과 Data Plane의 분리, 중앙 집중식 관리 시스템의 특징을 갖춘 SDN
 
@@ -2450,7 +2450,7 @@
 
 **NFV (Network Function Virtualization)**
 
-![NFV](images/NFV.png)
+![NFV](./image/NFV.png)
 
 > SDN 기반 가상 네트워크 기술
 > 
@@ -2483,7 +2483,7 @@
 
 ### MPLS(Multi-Protocol Label Switching) 기술
 
-![MPLS](images/MPLS.png)
+![MPLS](./image/MPLS.png)
 
 > 레이블 할당 및 배포 -> 패킷 입장 -> 레이블 스위칭 -> 패킷 출구 -> PHP
 
