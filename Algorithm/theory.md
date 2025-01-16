@@ -74,7 +74,16 @@
 - 데이터 이동이 적은 경우 적합
 
 ![select](./image/2.png)
->위 그림은 선택정렬 방식의 실행 과정을 보여줌 
+>위 그림은 선택정렬 방식의 실행 과정을 보여줌
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -106,6 +115,15 @@
 
 ![insert](./image/3.png)
 >위 그림은 기본정렬 방식의 실행 과정을 보여줌 
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 ## 고급 정렬 알고리즘
@@ -139,6 +157,15 @@
 ![merge](./image/4.png)
 >위 그림은 배열을 분리해서 정렬 후 다시 병합하는 과정을 보여줌 
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 퀵 정렬 (Quick Sort)
@@ -169,6 +196,15 @@
 
 ![quick](./image/5.png)
 >위 그림은 Pivot을 이용하여 정렬하는 실행 과정을 보여줌 
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -201,6 +237,15 @@
 ![heap](./image/6.png)
 >위 그림은 배열을 힙으로 정렬하는 과정을 보여줌 
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 기수 정렬 (Radix Sort)
@@ -226,7 +271,7 @@
 
 **활용:**
 - 정수형 데이터에 적합
-
+  
 ---
 
 ### 계수 정렬 (Counting Sort)
@@ -343,6 +388,15 @@
 ![linear](./image/7.png)
 > 위 그림은 순차적 탐색을 통해 29를 찾는 과정을 보여줌 
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 이진 탐색 (Binary Search)
@@ -368,6 +422,15 @@
 ![binary](./image/8.png)
 >위 그림은 데이터의 중간값을 기준으로 정렬하는 과정을 보여줌 
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 이진 탐색 변형 (lower/upper bound 등)
@@ -387,6 +450,7 @@
   - 데이터 정렬이 필수적
 - **활용**:
   - 정렬된 데이터의 범위를 계산하거나 이진 탐색과 결합하여 사용
+
 
 ## 고급 탐색 알고리즘
 
@@ -410,6 +474,15 @@
 - **활용**:
   - 동적 데이터 탐색 및 관리
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 해시 기반 탐색 (Hash-based Search)
@@ -429,6 +502,15 @@
   - 충돌 관리가 필요하며, 해시 함수 설계에 따라 성능이 좌우됨
 - **활용**:
   - 키-값 쌍 기반 데이터 검색 (예: 해시 테이블)
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -681,6 +763,15 @@
 **단점:**
 - N 값이 클수록 탐색 시간이 증가
 
+**실습 코드**
+<details>
+<summary>N-Queen - python</summary>
+
+```python
+
+```
+</details>
+
 #### Sudoku Solver
 
 **정의:**
@@ -697,6 +788,15 @@
 **단점:**
 - 퍼즐이 복잡할수록 탐색 시간이 증가
 # 그리디 알고리즘 (Greedy Algorithm)
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ## 개념 및 특징
 
@@ -742,6 +842,15 @@
 **단점:**
 - 특정 동전 조합에서는 최적해가 되지 않을 수 있음
 
+**실습 코드**
+<details>
+<summary>Coin Change Problem - python</summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 활동 선택 문제 (Activity Selection Problem)
@@ -762,6 +871,15 @@
 
 **단점:**
 - 정렬 과정이 필요하여 초기 오버헤드 발생 가능
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -939,6 +1057,15 @@
 **활용:**
 - 재귀와 반복 구현 비교, 수학적 문제 해결
 
+**실습 코드**
+<details>
+<summary>Fibonacci - python</summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 배낭 문제 (Knapsack Problem)
@@ -963,6 +1090,15 @@
 
 **활용:**
 - 자원 최적화, 비용 최소화 문제
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -989,6 +1125,15 @@
 **활용:**
 - DNA 서열 분석, 텍스트 편집기 구현
 
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 최장 증가 부분 수열 (LIS: Longest Increasing Subsequence)
@@ -1012,6 +1157,15 @@
 
 **활용:**
 - 데이터 분석, 패턴 인식
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
