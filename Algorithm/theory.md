@@ -353,7 +353,7 @@ print("Sorted Array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Heap sort - python</summary>
 
 ```python
 def heapify(arr, n, i):
