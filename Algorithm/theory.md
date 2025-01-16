@@ -36,6 +36,7 @@
 ![bubble](./image/1.png)
 >위 그림은 버블 정렬 방법의 실행 과정을 보여줌
 
+**실습 코드**
 <details>
 <summary></summary>
 
