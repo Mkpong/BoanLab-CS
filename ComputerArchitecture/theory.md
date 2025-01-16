@@ -40,7 +40,7 @@
 ## 컴퓨터의 구성 요소 (Components of a Computer System)
 
 **중앙처리장치(CPU)**
-![image](./images/CPU.png)
+![image](./image/CPU.png)
 > CPU 내부 구조
 - **정의**: 
   - 컴퓨터 시스템의 두뇌 역할을 하며, 명령어를 해석하고 실행함
@@ -64,7 +64,7 @@
       - SDD(Solid State Drive) - 반도체를 이용하여 데이터를 저장하는 장치, 플래시 메모리를 사용하고, HDD와 비교해 작교 가벼우며 처리 속도가 빠름
       - USB(Universal Serial Bus) - USB 포트에 꽂아 사용하는 이동형 저장장치, 플래시 메모리를 사용함  
   - 메모리 계층 구조
-    ![image](./images/MEM.png)
+    ![image](./image/MEM.png)
     > 메모리 계층 구조도
     - 필요에 따라 여러 종류의 메모리를 나눠 CPU가 순차적으로 액세스 함으로써 최적의 효율을 낼 수 있게 하는 구조
     - 계층 위로 올라갈 수록 접근 속도가 빠르고 저장 용량이 적어짐
@@ -93,7 +93,7 @@
       - 접근 속도가 가장 느리고, 일반적으로 인터넷을 통해 접근함
 
 **입출력 장치 (I/O Devices)**
-![image](./images/I:O_Devices.png)
+![image](./image/I:O_Devices.png)
 >I/O 장치의 기본 작동 원리
 - **정의**: 
   - 컴퓨터 시스템과 외부 환경 간의 데이터 교환을 가능하게 하는 하드웨어 장치
@@ -106,7 +106,7 @@
 
 **폰노이만 아키텍처 (Von Neumann Architecture)**
 
-![image](./images/von.png)
+![image](./image/von.png)
 >폰 노이만 아키텍처 데이터 교환 방식 및 내부 구조
 - **정의**: 
   - 프로그램과 데이터를 동일한 메모리에 저장하고, CPU가 메모리에서 명령어를 순차적으로 가져와 실행하는 컴퓨터 설계 모델
@@ -122,7 +122,7 @@
   - 한 번에 하나의 명령어만 처리하므로 CPU를 비효율적으로 사용함
 
 **하버드 아키텍처 (Harvard Architecture)**
-![image](./images/havard.png)
+![image](./image/havard.png)
 >하버드 아키텍처 데이터 교환 방식 및 내부 구조
 - **정의**: 
   - 명령어와 데이터를 별도의 메모리 공간에 저장하고, 독립적인 버스를 통해 접근하는 컴퓨터 설계 모델
@@ -1062,7 +1062,7 @@ public class TLBExample {
 ## 입출력 시스템 (I/O Systems)
 
 ### 입출력 장치와 동작 원리 (I/O Devices and Operations)
-![image](./images/I:O_Devices.png)
+![image](./image/I:O_Devices.png)
 >I/O 장치의 데이터 교환 과정
 - **정의**
     - 입출력 장치는 컴퓨터와 외부 장치 간에 데이터를 주고받는 하드웨어 장치임
@@ -1083,7 +1083,7 @@ public class TLBExample {
 
 **프로그램 제어(Programmed I/O)**
 
-![image](./images/Programmed_I:O.png)
+![image](./image/Programmed_I:O.png)
 >Programmed I/O 방식으로 입출력 제어 방식
 - **정의**
     - CPU가 I/O 장치를 직접 제어하는 방식으로, CPU가 각 입출력 작업을 순차적으로 처리함
@@ -1130,7 +1130,7 @@ public class TLBExample {
 
 **인터럽트 방식(Interrupt-driven I/O)**
 
-![image](./images/Interrupt_driven_I:O.png)
+![image](./image/Interrupt_driven_I:O.png)
 >I/O device와 CPU 간의 데이터 교환 과정
 - **정의**
     - 입출력 작업을 요청한 후, CPU가 다른 작업을 수행하다가 I/O 장치가 작업을 완료하면 인터럽트를 통해 CPU에게 알림
@@ -1180,7 +1180,7 @@ public class TLBExample {
 
 **DMA(Direct Memory Access)**
 
-![image](./images/DMA.png)
+![image](./image/DMA.png)
 >CPU, Memory, I/O controller 간 버스로 연결 된 형태
 - **정의**
     - CPU의 개입 없이 I/O 장치가 직접 메모리와 데이터를 주고받는 방식
@@ -1226,7 +1226,7 @@ public class TLBExample {
             - DMA 방식에서 CPU 개입 없이 데이터를 전송하는 구조를 보여주기 위함
 
 ### 인터럽트 (Interrupts)
-![image](./images/Interrupts.png)
+![image](./image/Interrupts.png)
 > Interrupt 처리 과정
 - **정의**
     - CPU의 작업을 잠시 멈추고 다른 중요한 작업을 수행하는 시스템 방식으로, I/O 장치나 타이머 등에서 발생함
@@ -1245,7 +1245,7 @@ public class TLBExample {
     - 실시간 시스템, 하드웨어 오류 처리 등에서 많이 사용됨
 
 ### I/O 버스와 데이터 전송 (I/O Bus and Data Transfer)
-![image](./images/I:O_Bus:Data%20_Transfer.png)
+![image](./image/I:O_Bus:Data%20_Transfer.png)
 > 버스로 연결된 장치의 모습
 - **정의**
     - I/O 버스는 컴퓨터 시스템의 CPU, 메모리, I/O 장치 간에 데이터를 전송하는 통로
@@ -1268,7 +1268,7 @@ public class TLBExample {
 ### 데이터 경로 설계 (Datapath Design)
 
 **단일 사이클(Single-Cycle Design)**
-![image](./images/Single_Cycle_Design.png)
+![image](./image/Single_Cycle_Design.png)
 > CPU 내부의 명령어 사이클 처리 과정
 - **정의**
     - 단일 클럭 주기 내에서 하나의 명령어가 완료되는 설계 방식
@@ -1361,7 +1361,7 @@ public class TLBExample {
 
 **멀티 사이클(Multi-Cycle Design)**
 
-![image](./images/Multi_Cycle_Design.png)
+![image](./image/Multi_Cycle_Design.png)
 > CPU 내부의 멀티 사이클 처리 과정
 - **정의**
     - 명령어를 여러 클럭 주기에 나누어 실행하는 설계 방식임
@@ -1474,7 +1474,7 @@ public class TLBExample {
 ### 제어 유닛 설계 (Control Unit Design)
 
 **하드와이어드 제어 (Hardwired Control)**
-![image](./images/Hardwired_Control.png)
+![image](./image/Hardwired_Control.png)
 > Hardwired 방식의 데이터 교환 방식
 - **정의**
     - 명령어에 따라 미리 정의된 제어 신호를 생성하는 방식
@@ -1529,7 +1529,7 @@ public class TLBExample {
         - 명령어를 고정된 방식으로 처리하며, 새로운 명령어가 추가되면 코드를 수정해야 함. 이는 시스템을 빠르게 실행할 수 있으나 유연성이 떨어짐
 
 **마이크로프로그램 제어 (Microprogrammed Control)**
-![image](./images/Microprogrammed%20_Control.png)
+![image](./image/Microprogrammed%20_Control.png)
 >CPU 내부에서 마이크로프로그램 명령어가 처리되는 과정
 
 - **정의**
@@ -1596,7 +1596,7 @@ public class TLBExample {
 ### 파이프라인 처리 (Pipelining)
 
 **파이프라인의 개념과 이점**
-![image](./images/Pipelining.png)
+![image](./image/Pipelining.png)
 >각 단계 별 Pipeline 구조도
 - **정의**
     - 명령어를 여러 단계로 나누어 동시에 처리하는 방식임
@@ -2111,7 +2111,7 @@ public class TLBExample {
         - 이는 캐시가 데이터를 효율적으로 로드하도록 하여 **공간 지역성**을 활용함
 
 **분기 예측(Branch Prediction)**
-![image](./images/Branch_Prediction.png)
+![image](./image/Branch_Prediction.png)
 >CPU 내부에서 분기 예측하는 과정
 - **정의**
     - 조건문 및 반복문 분기를 예측하여 **제어 위험(Control Hazards)**을 최소화하는 기법
