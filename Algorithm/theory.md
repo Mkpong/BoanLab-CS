@@ -38,9 +38,27 @@
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Bubble sort - python</summary>
 
 ```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):  # 배열 전체를 반복
+        swapped = False  # 교환 여부를 확인
+        for j in range(0, n - i - 1):  # 아직 정렬되지 않은 부분
+            if arr[j] > arr[j + 1]:  # 인접한 두 값을 비교
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]  # 교환
+                swapped = True
+        if not swapped:  # 교환이 없으면 정렬 완료
+            break
+    return arr
+
+# 테스트
+data = [64, 34, 25, 12, 22, 11, 90]
+print("Unsorted Array:", data)
+
+sorted_data = bubble_sort(data)
+print("Sorted Array:", sorted_data)
 
 ```
 </details>
@@ -78,9 +96,27 @@
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Selection sort - python</summary>
 
 ```python
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        # 현재 반복에서 가장 작은 값의 인덱스를 찾음
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        # 가장 작은 값과 현재 위치 값을 교환
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+# 테스트
+data = [64, 25, 12, 22, 11]
+print("Unsorted Array:", data)
+
+sorted_data = selection_sort(data)
+print("Sorted Array:", sorted_data)
 
 ```
 </details>
@@ -180,9 +216,46 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Merge sort - python</summary>
 
 ```python
+def merge_sort(arr):
+    if len(arr) <= 1:  # 배열 길이가 1 이하이면 이미 정렬된 상태
+        return arr
+
+    # 배열을 두 부분으로 분할
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
+
+    # 분할된 부분 병합
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    sorted_array = []
+    i = j = 0
+
+    # 두 배열을 비교하며 작은 값을 결과에 추가
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            sorted_array.append(left[i])
+            i += 1
+        else:
+            sorted_array.append(right[j])
+            j += 1
+
+    # 남은 요소 추가
+    sorted_array.extend(left[i:])
+    sorted_array.extend(right[j:])
+
+    return sorted_array
+
+# 테스트
+data = [38, 27, 43, 3, 9, 82, 10]
+print("Unsorted Array:", data)
+
+sorted_data = merge_sort(data)
+print("Sorted Array:", sorted_data)
 
 ```
 </details>
@@ -220,9 +293,29 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Quick sort - python</summary>
 
 ```python
+def quick_sort(arr):
+    if len(arr) <= 1:  # 배열 길이가 1 이하이면 이미 정렬된 상태
+        return arr
+
+    # 피벗 선택 (여기서는 첫 번째 요소 사용)
+    pivot = arr[0]
+
+    # 피벗을 기준으로 왼쪽(작은 값)과 오른쪽(큰 값)으로 분할
+    less = [x for x in arr[1:] if x <= pivot]
+    greater = [x for x in arr[1:] if x > pivot]
+
+    # 재귀적으로 왼쪽과 오른쪽 배열 정렬 후 병합
+    return quick_sort(less) + [pivot] + quick_sort(greater)
+
+# 테스트
+data = [10, 7, 8, 9, 1, 5]
+print("Unsorted Array:", data)
+
+sorted_data = quick_sort(data)
+print("Sorted Array:", sorted_data)
 
 ```
 </details>
@@ -1070,16 +1163,88 @@ print_solutions(solutions[:3], n)  # 첫 3개의 솔루션만 출력
 
 **단점:**
 - 퍼즐이 복잡할수록 탐색 시간이 증가
-# 그리디 알고리즘 (Greedy Algorithm)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Sudoku solver - python</summary>
 
 ```python
+def solve_sudoku(board):
+    empty_cell = find_empty_cell(board)
+    if not empty_cell:  # 빈 칸이 없으면 퍼즐 해결 완료
+        return True
+
+    row, col = empty_cell
+
+    for num in range(1, 10):  # 1부터 9까지 숫자 시도
+        if is_valid(board, row, col, num):
+            board[row][col] = num  # 숫자를 배치
+            if solve_sudoku(board):  # 재귀 호출로 다음 빈 칸 시도
+                return True
+            board[row][col] = 0  # 실패 시 원상 복구
+
+    return False  # 모든 숫자가 실패하면 False 반환
+
+
+def find_empty_cell(board):
+    for row in range(9):
+        for col in range(9):
+            if board[row][col] == 0:  # 빈 칸은 0으로 표시됨
+                return (row, col)
+    return None
+
+
+def is_valid(board, row, col, num):
+    # 행 확인
+    if num in board[row]:
+        return False
+
+    # 열 확인
+    if num in [board[i][col] for i in range(9)]:
+        return False
+
+    # 3x3 박스 확인
+    box_row = row // 3 * 3
+    box_col = col // 3 * 3
+    for i in range(3):
+        for j in range(3):
+            if board[box_row + i][box_col + j] == num:
+                return False
+
+    return True
+
+
+def print_board(board):
+    for row in board:
+        print(" ".join(str(num) if num != 0 else "." for num in row))
+
+
+# 테스트용 스도쿠 퍼즐 (0은 빈 칸을 의미)
+sudoku_board = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9],
+]
+
+print("Original Sudoku Board:")
+print_board(sudoku_board)
+
+if solve_sudoku(sudoku_board):
+    print("\nSolved Sudoku Board:")
+    print_board(sudoku_board)
+else:
+    print("\nNo solution exists!")
 
 ```
 </details>
+
+# 그리디 알고리즘 (Greedy Algorithm)
 
 ## 개념 및 특징
 
@@ -1266,15 +1431,6 @@ print("Selected activities:", result)
 
 ![prim](./image/11.png)
 >위 그림은 정점하나를 기준으로 트리를 만들어나가는 과정을 보여줌 
-
-**실습 코드**
-<details>
-<summary></summary>
-
-```python
-
-```
-</details>
 
 ---
 
@@ -1596,7 +1752,22 @@ print("LCS:", lcs_string)
 <summary></summary>
 
 ```python
+def lis(arr):
+    n = len(arr)
+    dp = [1] * n  # 각 요소에서의 LIS 길이를 저장
 
+    # LIS 계산
+    for i in range(1, n):
+        for j in range(i):
+            if arr[i] > arr[j]:  # 증가하는 관계일 경우
+                dp[i] = max(dp[i], dp[j] + 1)
+
+    return max(dp)  # LIS의 최대 길이 반환
+
+# 테스트
+data = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+print("Array:", data)
+print("Length of LIS:", lis(data))
 ```
 </details>
 
