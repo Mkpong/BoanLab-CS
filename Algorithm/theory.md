@@ -118,10 +118,31 @@
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Insertion sort - python</summary>
 
 ```python
+def insertion_sort(arr):
+    # 첫 번째 요소는 이미 정렬된 것으로 간주하므로 두 번째 요소부터 시작
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
 
+        # key 값이 정렬된 부분의 값보다 작으면 위치를 이동
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        # key 값을 올바른 위치에 삽입
+        arr[j + 1] = key
+
+    return arr
+
+# 테스트
+data = [12, 11, 13, 5, 6]
+print("Unsorted array:", data)
+
+sorted_data = insertion_sort(data)
+print("Sorted array:", sorted_data)
 ```
 </details>
 
