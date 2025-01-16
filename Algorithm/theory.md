@@ -448,10 +448,25 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Linear search - python</summary>
 
 ```python
+def linear_search(arr, target):
+    # 배열의 각 요소를 순차적으로 확인
+    for i in range(len(arr)):
+        if arr[i] == target:  # 대상 값을 찾으면 인덱스 반환
+            return i
+    return -1  # 대상 값이 없으면 -1 반환
 
+# 테스트
+data = [10, 20, 30, 40, 50]
+target = 30
+
+result = linear_search(data, target)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
 ```
 </details>
 
@@ -482,10 +497,46 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Binary Search</summary>
 
 ```python
+def binary_search_recursive(arr, target, low, high):
+    if low > high:
+        return -1  # 대상 값이 없으면 -1 반환
 
+    mid = (low + high) // 2  # 중간 인덱스 계산
+
+    if arr[mid] == target:
+        return mid  # 대상 값 찾음
+    elif arr[mid] > target:
+        return binary_search_recursive(arr, target, low, mid - 1)  # 왼쪽 절반 탐색
+    else:
+        return binary_search_recursive(arr, target, mid + 1, high)  # 오른쪽 절반 탐색
+
+def binary_search_iterative(arr, target):
+    low, high = 0, len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2  # 중간 인덱스 계산
+
+        if arr[mid] == target:
+            return mid  # 대상 값 찾음
+        elif arr[mid] > target:
+            high = mid - 1  # 왼쪽 절반으로 범위 줄이기
+        else:
+            low = mid + 1  # 오른쪽 절반으로 범위 줄이기
+
+    return -1  # 대상 값이 없으면 -1 반환
+
+# 테스트
+data = [10, 20, 30, 40, 50, 60]
+target = 30
+
+result = binary_search_recursive(data, target, 0, len(data) - 1)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
 ```
 </details>
 
@@ -537,7 +588,79 @@ print("Sorted array:", sorted_data)
 <summary></summary>
 
 ```python
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
 
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    # 삽입 함수
+    def insert(self, key):
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert(self.root, key)
+
+    def _insert(self, current, key):
+        if key < current.key:  # 왼쪽에 삽입
+            if current.left is None:
+                current.left = Node(key)
+            else:
+                self._insert(current.left, key)
+        elif key > current.key:  # 오른쪽에 삽입
+            if current.right is None:
+                current.right = Node(key)
+            else:
+                self._insert(current.right, key)
+
+    # 탐색 함수
+    def search(self, key):
+        return self._search(self.root, key)
+
+    def _search(self, current, key):
+        if current is None:
+            return False  # 키를 찾을 수 없음
+        if key == current.key:
+            return True  # 키를 찾음
+        elif key < current.key:
+            return self._search(current.left, key)  # 왼쪽 서브트리 탐색
+        else:
+            return self._search(current.right, key)  # 오른쪽 서브트리 탐색
+
+    # 중위 순회 (Inorder Traversal)
+    def inorder(self):
+        result = []
+        self._inorder(self.root, result)
+        return result
+
+    def _inorder(self, current, result):
+        if current:
+            self._inorder(current.left, result)  # 왼쪽 서브트리
+            result.append(current.key)          # 현재 노드
+            self._inorder(current.right, result)  # 오른쪽 서브트리
+
+# 이진 검색 트리 생성
+bst = BinarySearchTree()
+
+# 노드 삽입
+bst.insert(50)
+bst.insert(30)
+bst.insert(70)
+bst.insert(20)
+bst.insert(40)
+bst.insert(60)
+bst.insert(80)
+
+# 탐색 테스트
+print("Search 40:", bst.search(40))  # True
+print("Search 25:", bst.search(25))  # False
+
+# 중위 순회 결과 출력 (오름차순 정렬된 결과)
+print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 ```
 </details>
 
@@ -563,10 +686,64 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Hash-based search - python</summary>
 
 ```python
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [None] * size
 
+    # 해시 함수: 키를 배열의 인덱스로 변환
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    # 삽입 함수
+    def insert(self, key, value):
+        index = self._hash(key)
+        if self.table[index] is None:
+            self.table[index] = []
+        # 동일 키 존재 시 업데이트, 없으면 추가
+        for pair in self.table[index]:
+            if pair[0] == key:
+                pair[1] = value
+                return
+        self.table[index].append([key, value])
+
+    # 탐색 함수
+    def search(self, key):
+        index = self._hash(key)
+        if self.table[index] is not None:
+            for pair in self.table[index]:
+                if pair[0] == key:
+                    return pair[1]
+        return None  # 키를 찾을 수 없는 경우
+
+    # 삭제 함수
+    def delete(self, key):
+        index = self._hash(key)
+        if self.table[index] is not None:
+            for i, pair in enumerate(self.table[index]):
+                if pair[0] == key:
+                    self.table[index].pop(i)
+                    return True
+        return False  # 키를 찾을 수 없는 경우
+
+# 해시 테이블 생성
+hash_table = HashTable(10)
+
+# 데이터 삽입
+hash_table.insert("apple", 5)
+hash_table.insert("banana", 10)
+hash_table.insert("orange", 15)
+
+# 데이터 탐색
+print("Search 'apple':", hash_table.search("apple"))  # 5
+print("Search 'grape':", hash_table.search("grape"))  # None
+
+# 데이터 삭제
+hash_table.delete("banana")
+print("Search 'banana':", hash_table.search("banana"))  # None
 ```
 </details>
 
@@ -826,7 +1003,55 @@ print("Sorted array:", sorted_data)
 <summary>N-Queen - python</summary>
 
 ```python
+def solve_n_queens(n):
+    def is_safe(board, row, col):
+        # 같은 열에 퀸이 있는지 확인
+        for i in range(row):
+            if board[i] == col:
+                return False
 
+        # 왼쪽 위 대각선에 퀸이 있는지 확인
+        for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
+            if board[i] == j:
+                return False
+
+        # 오른쪽 위 대각선에 퀸이 있는지 확인
+        for i, j in zip(range(row - 1, -1, -1), range(col + 1, n)):
+            if board[i] == j:
+                return False
+
+        return True
+
+    def backtrack(row):
+        # 모든 퀸을 배치한 경우
+        if row == n:
+            result.append(board[:])
+            return
+
+        for col in range(n):
+            if is_safe(board, row, col):
+                board[row] = col  # 퀸 배치
+                backtrack(row + 1)  # 다음 행으로 이동
+                board[row] = -1  # 백트래킹 (원상 복구)
+
+    result = []
+    board = [-1] * n  # 각 행에서 퀸이 배치된 열을 저장
+    backtrack(0)
+    return result
+
+def print_solutions(solutions, n):
+    for solution in solutions:
+        for i in range(n):
+            row = ["."] * n
+            row[solution[i]] = "Q"
+            print(" ".join(row))
+        print("\n")
+
+# 테스트
+n = 8
+solutions = solve_n_queens(n)
+print(f"Number of solutions for {n}-Queens: {len(solutions)}\n")
+print_solutions(solutions[:3], n)  # 첫 3개의 솔루션만 출력
 ```
 </details>
 
@@ -905,7 +1130,29 @@ print("Sorted array:", sorted_data)
 <summary>Coin Change Problem - python</summary>
 
 ```python
+def coin_change_greedy(amount, coins):
+    # 큰 단위의 동전부터 사용하기 위해 내림차순 정렬
+    coins.sort(reverse=True)
 
+    result = {}
+    for coin in coins:
+        if amount >= coin:
+            count = amount // coin  # 해당 동전으로 거슬러 줄 수 있는 개수
+            result[coin] = count
+            amount %= coin  # 남은 금액 계산
+
+    # 남은 금액이 0이 아니면 거슬러 줄 수 없는 경우
+    if amount != 0:
+        return "Cannot give exact change"
+
+    return result
+
+# 테스트
+coins = [500, 100, 50, 10]  # 동전 단위
+amount = 2190  # 거슬러 줄 금액
+
+result = coin_change_greedy(amount, coins)
+print("Change for", amount, ":", result)
 ```
 </details>
 
@@ -932,10 +1179,42 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Activity Selection Probelm - python</summary>
 
 ```python
+def activity_selection(activities):
+    # 종료 시간을 기준으로 활동 정렬
+    activities.sort(key=lambda x: x[1])
 
+    selected_activities = []  # 선택된 활동 저장
+    last_end_time = 0  # 마지막으로 선택된 활동의 종료 시간
+
+    for activity in activities:
+        start, end = activity
+        # 현재 활동이 마지막으로 선택된 활동과 겹치지 않는 경우 선택
+        if start >= last_end_time:
+            selected_activities.append(activity)
+            last_end_time = end
+
+    return selected_activities
+
+# 테스트
+activities = [
+    (1, 4),  # 활동 1: 시작 시간 1, 종료 시간 4
+    (3, 5),  # 활동 2
+    (0, 6),  # 활동 3
+    (5, 7),  # 활동 4
+    (3, 8),  # 활동 5
+    (5, 9),  # 활동 6
+    (6, 10), # 활동 7
+    (8, 11), # 활동 8
+    (8, 12), # 활동 9
+    (2, 13), # 활동 10
+    (12, 14) # 활동 11
+]
+
+result = activity_selection(activities)
+print("Selected activities:", result)
 ```
 </details>
 
@@ -987,6 +1266,15 @@ print("Sorted array:", sorted_data)
 
 ![prim](./image/11.png)
 >위 그림은 정점하나를 기준으로 트리를 만들어나가는 과정을 보여줌 
+
+**실습 코드**
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
 
 ---
 
@@ -1499,6 +1787,72 @@ print("LCS:", lcs_string)
 **활용:**
 - 네트워크 설계, 클러스터링
 
+**실습 코드**
+<details>
+<summary>Kruskal problem - python</summary>
+
+```python
+class DisjointSet:
+    def __init__(self, vertices):
+        self.parent = {v: v for v in vertices}
+        self.rank = {v: 0 for v in vertices}
+
+    def find(self, vertex):
+        if self.parent[vertex] != vertex:
+            self.parent[vertex] = self.find(self.parent[vertex])  # 경로 압축
+        return self.parent[vertex]
+
+    def union(self, u, v):
+        root_u = self.find(u)
+        root_v = self.find(v)
+
+        if root_u != root_v:
+            if self.rank[root_u] > self.rank[root_v]:
+                self.parent[root_v] = root_u
+            elif self.rank[root_u] < self.rank[root_v]:
+                self.parent[root_u] = root_v
+            else:
+                self.parent[root_v] = root_u
+                self.rank[root_u] += 1
+
+def kruskal(graph, vertices):
+    edges = []
+    for u in graph:
+        for v, weight in graph[u]:
+            edges.append((weight, u, v))
+
+    # 간선을 가중치 기준으로 정렬
+    edges.sort()
+
+    ds = DisjointSet(vertices)
+    mst = []
+
+    for weight, u, v in edges:
+        if ds.find(u) != ds.find(v):
+            ds.union(u, v)
+            mst.append((u, v, weight))
+
+    return mst
+
+# 테스트
+graph = {
+    0: [(1, 4), (7, 8)],
+    1: [(0, 4), (2, 8), (7, 11)],
+    2: [(1, 8), (3, 7), (8, 2), (5, 4)],
+    3: [(2, 7), (4, 9), (5, 14)],
+    4: [(3, 9), (5, 10)],
+    5: [(4, 10), (3, 14), (2, 4), (6, 2)],
+    6: [(5, 2), (8, 6), (7, 1)],
+    7: [(0, 8), (1, 11), (6, 1), (8, 7)],
+    8: [(2, 2), (6, 6), (7, 7)],
+}
+vertices = list(graph.keys())
+
+mst = kruskal(graph, vertices)
+print("Kruskal's MST:", mst)
+```
+</details>
+
 ---
 
 ### 프림 알고리즘 (Prim's Algorithm)
@@ -1523,6 +1877,52 @@ print("LCS:", lcs_string)
 
 **활용:**
 - 통신 네트워크 설계, 전력망 설계
+
+**실습 코드**
+<details>
+<summary>Prim problem - python</summary>
+
+```python
+import heapq
+
+def prim(graph, start):
+    mst = []  # 최소 신장 트리의 간선
+    visited = set()  # 방문한 노드
+    min_heap = [(0, start, None)]  # (가중치, 현재 노드, 이전 노드)
+
+    while min_heap:
+        weight, current, previous = heapq.heappop(min_heap)
+        if current in visited:
+            continue
+
+        visited.add(current)
+        if previous is not None:
+            mst.append((previous, current, weight))
+
+        # 현재 노드에 연결된 모든 간선을 확인
+        for neighbor, edge_weight in graph[current]:
+            if neighbor not in visited:
+                heapq.heappush(min_heap, (edge_weight, neighbor, current))
+
+    return mst
+
+# 테스트
+graph = {
+    0: [(1, 4), (7, 8)],
+    1: [(0, 4), (2, 8), (7, 11)],
+    2: [(1, 8), (3, 7), (8, 2), (5, 4)],
+    3: [(2, 7), (4, 9), (5, 14)],
+    4: [(3, 9), (5, 10)],
+    5: [(4, 10), (3, 14), (2, 4), (6, 2)],
+    6: [(5, 2), (8, 6), (7, 1)],
+    7: [(0, 8), (1, 11), (6, 1), (8, 7)],
+    8: [(2, 2), (6, 6), (7, 7)],
+}
+
+mst = prim(graph, 0)
+print("Prim's MST:", mst)
+```
+</details>
 
 ---
 
