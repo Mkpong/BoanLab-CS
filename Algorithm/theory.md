@@ -1,3 +1,19 @@
+def lis(arr):
+    n = len(arr)
+    dp = [1] * n  # 각 요소에서의 LIS 길이를 저장
+
+    # LIS 계산
+    for i in range(1, n):
+        for j in range(i):
+            if arr[i] > arr[j]:  # 증가하는 관계일 경우
+                dp[i] = max(dp[i], dp[j] + 1)
+
+    return max(dp)  # LIS의 최대 길이 반환
+
+# 테스트
+data = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+print("Array:", data)
+print("Length of LIS:", lis(data))
 # 정렬 (Sorting)
 
 ## 기본 정렬 알고리즘
@@ -678,7 +694,7 @@ else:
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Binary search tree - python</summary>
 
 ```python
 class Node:
