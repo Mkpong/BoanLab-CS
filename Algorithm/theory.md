@@ -263,7 +263,44 @@ print("Sorted array:", sorted_data)
 <summary></summary>
 
 ```python
+def heapify(arr, n, i):
+    largest = i  # 루트를 가장 큰 값으로 초기화
+    left = 2 * i + 1  # 왼쪽 자식 노드
+    right = 2 * i + 2  # 오른쪽 자식 노드
 
+    # 왼쪽 자식이 루트보다 크면 largest 업데이트
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+
+    # 오른쪽 자식이 largest보다 크면 largest 업데이트
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+
+    # largest가 루트가 아니라면 스왑 후 재귀적으로 힙 구조 재정렬
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    # 배열을 최대 힙으로 변환
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # 하나씩 힙에서 요소를 추출하여 정렬
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # 현재 루트(최대값)과 끝 요소를 교환
+        heapify(arr, i, 0)  # 남은 힙에 대해 재정렬
+
+    return arr
+
+# 테스트
+data = [12, 11, 13, 5, 6, 7]
+print("Unsorted array:", data)
+
+sorted_data = heap_sort(data)
+print("Sorted array:", sorted_data)
 ```
 </details>
 
@@ -1083,7 +1120,29 @@ print("Sorted array:", sorted_data)
 <summary>Fibonacci - python</summary>
 
 ```python
+def fibonacci_memo(n, memo={}):
+    if n in memo:  # 이미 계산된 결과가 있으면 반환
+        return memo[n]
+    if n <= 1:  # 기본 케이스
+        return n
+    # 재귀적으로 계산하고 결과를 메모에 저장
+    memo[n] = fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo)
+    return memo[n]
 
+def fibonacci_bottom_up(n):
+    if n <= 1:
+        return n
+    # DP 배열 생성
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    for i in range(2, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]  # 이전 두 값의 합
+    return dp[n]
+
+# 테스트
+n = 10
+print(f"Fibonacci({n}) =", fibonacci_bottom_up(n))
+print(f"Fibonacci({n}) =", fibonacci_memo(n))
 ```
 </details>
 
@@ -1114,10 +1173,34 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>Kanpsack - python</summary>
 
 ```python
+def knapsack(values, weights, capacity):
+    n = len(values)  # 물건 개수
+    # DP 테이블 초기화 (크기: (n+1) x (capacity+1))
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]
 
+    # DP 계산
+    for i in range(1, n + 1):
+        for w in range(1, capacity + 1):
+            if weights[i - 1] <= w:  # 현재 물건을 배낭에 넣을 수 있는 경우
+                dp[i][w] = max(
+                    dp[i - 1][w],  # 물건을 넣지 않는 경우
+                    dp[i - 1][w - weights[i - 1]] + values[i - 1]  # 물건을 넣는 경우
+                )
+            else:
+                dp[i][w] = dp[i - 1][w]  # 물건을 넣을 수 없는 경우
+
+    return dp[n][capacity]
+
+# 테스트
+values = [60, 100, 120]  # 물건 가치
+weights = [10, 20, 30]  # 물건 무게
+capacity = 50  # 배낭 용량
+
+result = knapsack(values, weights, capacity)
+print("Maximum value:", result)
 ```
 </details>
 
@@ -1148,10 +1231,51 @@ print("Sorted array:", sorted_data)
 
 **실습 코드**
 <details>
-<summary></summary>
+<summary>LSC - python</summary>
 
 ```python
+def lcs(s1, s2):
+    m, n = len(s1), len(s2)
+    # DP 테이블 생성 (크기: (m+1) x (n+1))
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
 
+    # DP 테이블 채우기
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if s1[i - 1] == s2[j - 1]:  # 문자가 같으면
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:  # 문자가 다르면
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+    # LCS 길이 반환
+    return dp[m][n], dp
+
+def reconstruct_lcs(s1, s2, dp):
+    i, j = len(s1), len(s2)
+    lcs_str = []
+
+    # DP 테이블을 역추적하여 LCS 문자열 복원
+    while i > 0 and j > 0:
+        if s1[i - 1] == s2[j - 1]:  # 문자가 같으면 LCS에 포함
+            lcs_str.append(s1[i - 1])
+            i -= 1
+            j -= 1
+        elif dp[i - 1][j] > dp[i][j - 1]:  # 위쪽 값이 더 크면 위로 이동
+            i -= 1
+        else:  # 왼쪽 값이 더 크면 왼쪽으로 이동
+            j -= 1
+
+    return ''.join(reversed(lcs_str))
+
+# 테스트
+s1 = "AGGTAB"
+s2 = "GXTXAYB"
+
+lcs_length, dp_table = lcs(s1, s2)
+lcs_string = reconstruct_lcs(s1, s2, dp_table)
+
+print("Length of LCS:", lcs_length)
+print("LCS:", lcs_string)
 ```
 </details>
 
