@@ -1,5 +1,5 @@
 # 리스트 (List)
-![image](./img/1.png)
+![image](./image/1.png)
 >위 그림은 배열과 연결리스트의 데이터 구조를 보여줌
 
 - 데이터를 순차적으로 저장하는 선형 데이터 구조임
@@ -112,7 +112,7 @@ public class DynamicArrayExample {
 
 ### 단일 연결 리스트 (Singly-Linked List)
 
-![image](./img/2.png)
+![image](./image/2.png)
 >위 그림은 단일 연결 리스트의 구조를 보여줌 
 
 - **정의**: 
@@ -201,7 +201,7 @@ public class TestSinglyLinkedList {
 
 ### 이중 연결 리스트 (Doubly-Linked List)
 
-![image](./img/3.png)
+![image](./image/3.png)
 >위 그림은 이중 연결 리스트의 구조를 보여줌 
 
 - **정의**: 
@@ -289,7 +289,7 @@ public class TestDoublyLinkedList {
 
 ### 원형 연결 리스트 (Circular-Linked List)
 
-![image](./img/4.png)
+![image](./image/4.png)
 >위 그림은 원형 연결 리스트의 구조를 보여줌 
 
 - **정의**: 
@@ -414,7 +414,7 @@ public class TestCircularQueue {
 - LIFO (Last In, First Out) 방식의 데이터 구조임
 
 ## 배열 기반 스택 (Array-based Stack)
-![image](./img/5.png)
+![image](./image/5.png)
 >위 그림은 LIFO (Last In, First Out) 방식의 데이터 구조를 보여줌 
 
 - **정의**
@@ -534,7 +534,7 @@ class ArrayStack {
 </details>
 
 ## 연결 리스트 기반 스택 (Linked List-based Stack)
-![image](./img/6.png)
+![image](./image/6.png)
 >위 그림은 연결 리스트 기반으로로 스택의 구조를 보여줌
 - **정의**
   - 연결 리스트로 구현된 스택임
@@ -777,7 +777,7 @@ class MinStack {
 # 큐 (Queue)
 
 ## 배열 기반 큐 (Array-based Queue)
-![image](./img/7.png)
+![image](./image/7.png)
 >위 그림은 FIFO (First In, First Out) 방식의 데이터 구조를 보여줌
 
 - **정의**
@@ -898,7 +898,7 @@ class ArrayQueue {
 </details>
 
 ## 순환 큐 (Circular Queue)
-![image](./img/8.png)
+![image](./image/8.png)
 >위 그림은 순환 큐 방식의 과정을 보여줌 
 
 - **정의**
@@ -1039,7 +1039,7 @@ class CircularQueue {
 </details>
 
 ## 연결 리스트 기반 큐 (Linked List-based Queue)
-![image](./img/9.png)
+![image](./image/9.png)
 > 위 그림은 연결리스트를 기반의 큐의 구조를 보여줌 
 
 - **정의**
@@ -1179,7 +1179,7 @@ class LinkedListQueue {
   -  우선순위를 기준으로 데이터를 처리하는 큐임
 
 ### 배열 기반 우선순위 큐
-![image](./img/10.png)
+![image](./image/10.png)
 >위 그림은 우선순위로 데이터가 정렬된 큐를 보여줌 
 
 - **특징**
@@ -1296,7 +1296,7 @@ class PriorityQueue {
 </details>
 
 ### 힙 기반 우선순위 큐
-![image](./img/11.png)
+![image](./image/11.png)
 >위 그림은 우선순위를 기준으로 힙을 정리하는 과정을 보여줌 
 
 - **특징**
@@ -1441,7 +1441,7 @@ public class HeapPriorityQueue {
 ---
 ## 배열 기반 덱 (Array-based Deque)
 
-![배열 덱](./img/deque_array.PNG)
+![배열 덱](./image/deque_array.PNG)
 > circular array를 이용하여 만든 덱 구조
 
 - **정의**:  배열을 사용해서 덱의 요소를 저장하는 방식  
@@ -1656,7 +1656,7 @@ public class ArrayDeque {
 
 ---
 ## 연결 리스트 기반 덱 (Linked List-based Deque)
-![리스트 덱](./img/deque_list.PNG)
+![리스트 덱](./image/deque_list.PNG)
 > doubly-linked list를 이용하여 만든 덱 구조
 - **정의**: 이중 연결 리스트를 사용하여 덱를 구현한 형태
 
@@ -1927,7 +1927,7 @@ class GFG {
     -  **차수(Degree)**: 노드가 가지는 자식 노드의 개수
 ---
 ### 일반 트리 (General Tree)
-![genaral tree](./img/general_tree.PNG)
+![genaral tree](./image/general_tree.PNG)
 > 일반 트리 구조
 - **정의**: 노드와 간선으로 구성된 계층적 데이터 구조
 
@@ -2024,7 +2024,7 @@ class Tree {
 ---   
 
 ### Left-child-right-sibling 트리 (LCRS Tree)
-![LCRS tree](./img/LCRS_tree.PNG)
+![LCRS tree](./image/LCRS_tree.PNG)
 > 일반 트리를 이진 트리 형태로 변형한 형태의 LCRS 트리
 - **정의**: 일반 트리를 이진 트리로 변환한 형태의 트리  
 
@@ -2127,7 +2127,7 @@ public class TreeConversion {
   1. 현재 노드 방문  
   2. 왼쪽 서브트리 전위 순회  
   3. 오른쪽 서브트리 전위 순회
-  ![pre_order](./img/pre_order.PNG)
+  ![pre_order](./image/pre_order.PNG)
         > pre-order 규칙을 따라 A -> B -> D -> H -> I -> E -> C -> F -> J -> G 순서대로 탐색
 
 - **장점**:  
@@ -2180,7 +2180,7 @@ public void preOrderTraversal(Node node) {
   1. 왼쪽 서브트리 중위 순회  
   2. 현재 노드 방문  
   3. 오른쪽 서브트리 중위 순회
- ![in_order](./img/in_order.PNG)
+ ![in_order](./image/in_order.PNG)
         > 중위 순회 규칙을 따라 H -> D -> I -> B -> E -> A -> J -> F -> C -> G 순서로 탐색
 - **장점**:  
     - 이진 탐색 트리에서 정렬된 순서로 요소 접근 가능  
@@ -2231,7 +2231,7 @@ public void inOrderTraversal(Node node) {
   1. 왼쪽 서브트리 후위 순회  
   2. 오른쪽 서브트리 후위 순회  
   3. 현재 노드 방문
- ![post-order](./img/post_order.PNG)
+ ![post-order](./image/post_order.PNG)
         > 후위 순회 규칙을 따라 H -> I -> D -> E -> B -> J -> F -> G -> C -> A 순서로 탐색
 - **장점**:  
     - 자식 노드를 모두 처리한 후 부모 노드를 처리하기 때문에 종속 관계의 데이터 처리에 적합
@@ -2283,7 +2283,7 @@ public void postOrderTraversal(Node node) {
 - **동작방식**:  
   1. 루트 노드 큐에 추가  
   2. 큐가 빌 때까지 반복: 큐에서 노드 제거, 방문, 자식 노드 큐에 추가
-    ![level-order](./img/level_order.PNG)
+    ![level-order](./image/level_order.PNG)
         > 레벨 순회 규칙을 따라 A -> B -> C -> D -> E -> F -> G -> H -> I -> J 순서로 탐색
 - **장점**:  
     - 트리의 계층 구조를 그대로 탐색하여 직관적으로 이해하거나 시각화하는데 유용
@@ -2340,14 +2340,14 @@ public void levelOrderTraversal(Node node) {
 ---
 
 ## 이진 트리 (Binary Tree)
-![binary tree](./img/binary_tree.PNG)
+![binary tree](./image/binary_tree.PNG)
 > 기본적인 이진 트리의 형태
 - **정의**: 각 노드가 최대 두 개의 자식 노드를 가질 수 있는 트리 구조
 - **특징**: 
   - 각 노드가 최대 두 개의 자식 노드(왼쪽, 오른쪽)을 가질 수 있음
   - 왼쪽과 오른쪽 서브트리가 각각 또 다른 이진 트리로 구성되는 재귀적 성질을 가짐
 ### 포화 이진 트리 (Perfect Binary Tree)
-![perfect bt](./img/perfect_binary.PNG)
+![perfect bt](./image/perfect_binary.PNG)
 > 모든 레벨이 완전히 채워진 형태
 - **정의**: 모든 레벨이 완전히 채워져 있는 이진 트리
 
@@ -2454,7 +2454,7 @@ public class PBinaryTree {
 ---
 
 ### 완전 이진 트리 (Complete Binary Tree)
-![complete bt](./img/complete_binary.PNG)
+![complete bt](./image/complete_binary.PNG)
 > 차례대로 채워져서 마지막 레벨은 왼쪽 노드부터 채워지는 형태
 - **정의**: 마지막 레벨을 제외한 모든 레벨이 완전히 채워져있으며, 마지막 레벨은 왼쪽 노드부터 순차적으로 채워진 이진 트리
 
@@ -2591,7 +2591,7 @@ public class CompleteBinaryTree {
 ---
 
 ### 경사 트리 (Skewed Tree)
-![skewed tree](./img/skewed_tree.PNG)
+![skewed tree](./image/skewed_tree.PNG)
 > 왼쪽 혹은 오른쪽 한 쪽 방향으로만 자식 노드를 가지는 형태
 - **정의**: 트리의 모든 노드가 같은 방향의 자식 노드만을 가지는 편향된 구조의 트리
 
@@ -2676,7 +2676,7 @@ class LST
 ---
 
 ### 수식 트리 (Expression Tree)
-![expression t](./img/expression_tree.PNG)
+![expression t](./image/expression_tree.PNG)
 > 수식을 표현하는 형태
 - **정의**:  
     - 수식의 연산자와 피연산자를 표현하기 위해 사용되는 이진 트리
@@ -2817,7 +2817,7 @@ public class Main {
 ---
 
 ## 이진 탐색 트리 (Binary Search Tree)
-![bst](./img/search_tree.PNG)
+![bst](./image/search_tree.PNG)
 > 빠른 탐색을 위해 왼쪽 자식은 자신보다 작은 데이터, 오른쪽 자식은 자신보다 큰 데이터를 넣은 형태
 - **정의**: 각 노드가 최대 두 개의 자식 노드를 가지고, 왼쪽 서브트리의 모든 노드 값은 현재 노드의 값보다 작고, 오른쪽 서브트리의 모든 노드 값은 현재 노드의 값보다 큰 이진 트리
 - **특징**: 
@@ -2961,7 +2961,7 @@ class BinarySearchTree {
 ---
 
 ### 균형 이진 탐색 트리 (Balanced BST)
-![balanced bst](./img/balanced_search_tree.PNG)
+![balanced bst](./image/balanced_search_tree.PNG)
 > 균형 이진 트리의 기본적인 형태
 - **정의**: 트리의 높이를 최소화하여 균형을 유지하는 이진 탐색 트리
 - **특징**:
@@ -2999,7 +2999,7 @@ class BinarySearchTree {
 
 <details><summary>AVL tree rotate 예시</summary>
 
-![avl rotate](./img/avl_rotate.PNG)
+![avl rotate](./image/avl_rotate.PNG)
 > 높이 차이를 1 이하로 유지하기 위해 rotate를 실행하는 예
 
 </details>
@@ -3226,7 +3226,7 @@ class AVLTree {
 ---
 
 #### 레드-블랙 트리 (Red-Black Tree)
-![r-b tree](./img/red_black_tree.PNG)
+![r-b tree](./image/red_black_tree.PNG)
 > 레드-블랙 트리의 기본적인 형태
 - **정의**: 각 노드에 색상을 부여하여 특정 규칙을 만족하게 유지하는 자가 균형 이진 탐색 트리
 
@@ -3249,13 +3249,13 @@ class AVLTree {
   - 다양한 컴퓨터 과학 알고리즘
 <details><summary>Red-Black 트리 삽입 색상변경 예시</summary>
 
-![1](./img/red_black_colour1.png)
+![1](./image/red_black_colour1.png)
 > red node 17을 삽입하면, 23과 17이 연속으로 빨간색이 되어 Red-Black 트리의 조건을 충족하지 못함
 
-![2](./img/red_black_colour2.png)
+![2](./image/red_black_colour2.png)
 > 17노드의 색상을 검은색으로 변경
 
-![3](./img/red_black_colour3.png)
+![3](./image/red_black_colour3.png)
 > 완성된 형태
 
 </details>
@@ -3825,17 +3825,17 @@ private void fixAfterDeletion(Entry<K,V> x) {
 
 <details><summary>zig step 예시</summary>
 
-![zig](./img/zig_step.PNG)
+![zig](./image/zig_step.PNG)
 > 3을 7과 rotate하면서 이진 탐색 트리의 형식에 맞춰 다른 노드도 수정
 </details>
 <details><summary>zig-zig step 예시</summary>
 
-![zig-zig](./img/zig_zig_step.PNG)
+![zig-zig](./image/zig_zig_step.PNG)
 > 3을 7과 한번 rotate 한 뒤, 13과 rotate하고, 다른 노드의 위치도 함께 수정
 </details>
 <details><summary>zig-zag step 예시</summary>
 
-![zig-zag](./img/zig_zag_step.PNG)
+![zig-zag](./image/zig_zag_step.PNG)
 > 7을 3과, 13과 roate 한 뒤, 다른 노드의 위치도 함께 수정
 </details>
 
@@ -4037,7 +4037,7 @@ class SplayTree {
 ### B 트리 계열 (B-tree Family)
 
 #### B 트리 (B-Tree)
-![b tree](./img/b_tree.PNG)
+![b tree](./image/b_tree.PNG)
 > B-Tree의 기본적인 형태
 - **정의**:  이진 트리를 확장해 하나의 노드가 가질 수 있는 자식 노드의 최대 숫자가 2보다 큰 트리
 
@@ -4061,28 +4061,28 @@ class SplayTree {
 
 <details><summary>B 트리의 키 공간이 다 차지 않았을 때, 삽입</summary>
 
-![1](./img/b_not_full1.PNG)
+![1](./image/b_not_full1.PNG)
 > 14를 삽입
 
-![2](./img/b_not_full2.PNG)
+![2](./image/b_not_full2.PNG)
 > 10과 20사이, 15보다 작고, 13보다 크므로 그림의 위치에 삽입
 </details>
 
 <details><summary>B 트리의 키 공간이 다 찼을 때, 삽입</summary>
 
-![1](./img/b_full1.PNG)
+![1](./image/b_full1.PNG)
 > 14를 삽입
 
-![2](./img/b_full2.PNG)
+![2](./image/b_full2.PNG)
 > 키 공간이 최대 2개라고 가정하면, 다 찼으므로 15의 자식 노드들을 중간값을 기준으로 분할
 
-![3](./img/b_full3.PNG)
+![3](./image/b_full3.PNG)
 > 중간값 15를 기준으로 분할
 
-![4](./img/b_full4.PNG)
+![4](./image/b_full4.PNG)
 > 중간값 15를 기준으로 분할
 
-![5](./img/b_full5.PNG)
+![5](./image/b_full5.PNG)
 > 완료된 형태
 
 </details>
@@ -4368,7 +4368,7 @@ class BTreeNode {
 ---
 
 #### B+ 트리 (B+ Tree)
-![B+ tree](./img/b+_tree.PNG)
+![B+ tree](./image/b+_tree.PNG)
 - **정의**:   
     - 모든 실제 데이터가 리프 노드에만 저장되고, 내부 노드는 인덱스 역할을 하는 키만을 저장하는 B 트리의 변형
 - **특징**  
@@ -4698,7 +4698,7 @@ class BPlusTree {
 ---
 
 ### 최대 힙 (Max-Heap)
-![max_heap](./img/max_heap.PNG)
+![max_heap](./image/max_heap.PNG)
 > 최대 힙의 기본 형태
 - **정의**: 부모 노드의 값이 자식 노드의 값보다 크거나 같은 힙 구조
 
@@ -4720,34 +4720,34 @@ class BPlusTree {
 
 <details><summary>최대 힙 삽입</summary>
 
-![1](./img/max_insert1.PNG)
+![1](./image/max_insert1.PNG)
 > 새 노드를 삽입하면 부모 노드와 비교하여 새 노드가 크다면 자리를 교체
 
-![2](./img/max_insert2.PNG)
+![2](./image/max_insert2.PNG)
 > 비교/교체 반복
 
-![3](./img/max_insert3.PNG)
+![3](./image/max_insert3.PNG)
 > 비교/교체 반복
 
-![4](./img/max_insert4.PNG)
+![4](./image/max_insert4.PNG)
 > 새 노드가 제일 큰 수이므로, root 자리에 위치
 
 </details>
 <details><summary>최대 힙 삭제</summary>
 
-![1](./img/max_delete1.PNG)
+![1](./image/max_delete1.PNG)
 > 79 노드 삭제
 
-![2](./img/max_delete2.PNG)
+![2](./image/max_delete2.PNG)
 > 제일 마지막 노드인 53을 삭제된 노드의 위치로 옮김
 
-![3](./img/max_delete3.PNG)
+![3](./image/max_delete3.PNG)
 > 왼쪽 자식, 오른쪽 자식과 비교하여 더 큰 노드와 교체
 
-![4](./img/max_delete4.PNG)
+![4](./image/max_delete4.PNG)
 > 더 큰 노드가 없을때까지 반복
 
-![5](./img/max_delete5.PNG)
+![5](./image/max_delete5.PNG)
 > 완료된 형태
 
 </details>
@@ -4957,7 +4957,7 @@ public class MaxHeap {
 ---
 
 ### 최소 힙 (Min-Heap)
-![min heap](./img/min_heap.PNG)
+![min heap](./image/min_heap.PNG)
 > 최소 힙의 기본 형태
 - **정의**: 부모 노드의 값이 자식 노드의 값보다 크거나 같은 힙 구조  
 
@@ -5245,7 +5245,7 @@ class MinHeap {
 ### 경로 압축 및 크기 조정 (Path Compression and Union by Rank)
 - **정의**: Union-Find 알고리즘에서 연산을 최적화하기 위한 기법
 - **경로 압축**: 
-    ![path compression](./img/path_compression.PNG)
+    ![path compression](./image/path_compression.PNG)
     -  **정의**: Find 연산을 수행할 때, 트리의 각 노드들을 루트 노드에 직접 연결함으로써 트리의 높이를 줄이는 기법
     -  **특징**:
        -  주어진 원소가 속한 집합의 대표자를 찾는 과정으로, 트리의 높이를 최소화하고 Find 연산을 수행할 때 트리의 경로에 있는 모든 노드를 대표자와 바로 연결하여 이후 Find 연산이 더 빠르게 수행됨
@@ -5330,7 +5330,7 @@ public void union(Subset[] subsets, int x, int y)
   - 간선은 출발점에서 도착점으로 연결됨
   - 간선은 (A → B)와 같이 방향을 가진다
 
-![Image](img/directedgraph.png)
+![Image](./image/directedgraph.png)
 > 위 그림은 노드(A,B,C,D) 간의 관계를 방향성 있는 간선으로 표현한 구조 
 #### 무방향 그래프 (Undirected Graph)
 - 정의: 간선에 방향이 없는 그래프
@@ -5338,14 +5338,14 @@ public void union(Subset[] subsets, int x, int y)
   - 두 정점은 서로 양방향으로 연결됨
   -  간선은 (A, B)와 같이 두 정점 간의 관계로 나타낸다
 
-![Image](img/undirectedgraph.png)
+![Image](./image/undirectedgraph.png)
 > 위 그림은 노드(A,B,C,D) 간의 관계를 방향성 없는 간선으로 표현한 구조 
 #### 가중 그래프 (Weighted Graph)
 - 정의: 간선에 가중치가 부여된 그래프
 - 특징:
   - 가중치는 두 정점 간의 거리나 비용 등을 나타냄
 
-![Image](img/weightedgraph.png)
+![Image](./image/weightedgraph.png)
 > 위 그림은  A에서 C로 가는 경로는 5, D에서 B로 가는 경로는 7의 가중치를 갖는 것을 보여줌 
 #### 비가중 그래프
 - 정의: 간선에 가중치가 없는 그래프
@@ -5365,7 +5365,7 @@ public void union(Subset[] subsets, int x, int y)
   - 메모리 비효율적 사용
   - 노드 추가/삭제 어려움 
 
-![Image](img/Adjacency_Matrix.png)
+![Image](./image/Adjacency_Matrix.png)
 > 위 그림은 방향 그래프와 그래프의 각 정점 간의 연결 관계를 0(연결 없음)과 1(연결 있음)로 나타낸 2차원 배열인 인접 행렬을 보여줌
 
 
@@ -5374,7 +5374,7 @@ public void union(Subset[] subsets, int x, int y)
 - 장점: 동적 데이터 구조 사용 가능
 - 단점: 간선이 많을수록 저장해야 할 리스트가 커져서 메모리 효율성이 떨어짐
 
-![Image](img/Adjacency_List.png)
+![Image](./image/Adjacency_List.png)
 > 왼쪽의 그래프는 정점과 가중치 있는 간선으로 구성되어 있으며, 오른쪽의 인접 리스트는 각 정점에 연결된 이웃 정점과 간선의 가중치를 나타냄 
 
 
@@ -6321,7 +6321,7 @@ class Prim {
 - 장점: 빠르게 데이터를 검색하고 저장할 수 있음
 - 단점: 메모리 효율성 낮음
 
-![Image](img/hashtable.png)
+![Image](./image/hashtable.png)
 > 위 그림은 a,b,c,d의 키가 해시 함수에 의해 특정 버킷(0,1,2,3)으로 매핑되고 해당 버킷에 데이터가 저장되는 과정을 보여줌 
 
 ### 해시 함수
