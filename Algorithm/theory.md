@@ -36,6 +36,14 @@
 ![bubble](./image/1.png)
 >위 그림은 버블 정렬 방법의 실행 과정을 보여줌
 
+<details>
+<summary></summary>
+
+```python
+
+```
+</details>
+
 ---
 
 ### 선택 정렬 (Selection Sort)
