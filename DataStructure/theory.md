@@ -5330,7 +5330,7 @@ public void union(Subset[] subsets, int x, int y)
   - 간선은 출발점에서 도착점으로 연결됨
   - 간선은 (A → B)와 같이 방향을 가진다
 
-![Image](img/directedgraph.png)
+![Image](./image/directedgraph.png)
 > 위 그림은 노드(A,B,C,D) 간의 관계를 방향성 있는 간선으로 표현한 구조 
 #### 무방향 그래프 (Undirected Graph)
 - 정의: 간선에 방향이 없는 그래프
@@ -5338,14 +5338,14 @@ public void union(Subset[] subsets, int x, int y)
   - 두 정점은 서로 양방향으로 연결됨
   -  간선은 (A, B)와 같이 두 정점 간의 관계로 나타낸다
 
-![Image](img/undirectedgraph.png)
+![Image](./image/undirectedgraph.png)
 > 위 그림은 노드(A,B,C,D) 간의 관계를 방향성 없는 간선으로 표현한 구조 
 #### 가중 그래프 (Weighted Graph)
 - 정의: 간선에 가중치가 부여된 그래프
 - 특징:
   - 가중치는 두 정점 간의 거리나 비용 등을 나타냄
 
-![Image](img/weightedgraph.png)
+![Image](./image/weightedgraph.png)
 > 위 그림은  A에서 C로 가는 경로는 5, D에서 B로 가는 경로는 7의 가중치를 갖는 것을 보여줌 
 #### 비가중 그래프
 - 정의: 간선에 가중치가 없는 그래프
@@ -5365,7 +5365,7 @@ public void union(Subset[] subsets, int x, int y)
   - 메모리 비효율적 사용
   - 노드 추가/삭제 어려움 
 
-![Image](img/Adjacency_Matrix.png)
+![Image](./image/Adjacency_Matrix.png)
 > 위 그림은 방향 그래프와 그래프의 각 정점 간의 연결 관계를 0(연결 없음)과 1(연결 있음)로 나타낸 2차원 배열인 인접 행렬을 보여줌
 
 
@@ -5374,7 +5374,7 @@ public void union(Subset[] subsets, int x, int y)
 - 장점: 동적 데이터 구조 사용 가능
 - 단점: 간선이 많을수록 저장해야 할 리스트가 커져서 메모리 효율성이 떨어짐
 
-![Image](img/Adjacency_List.png)
+![Image](./image/Adjacency_List.png)
 > 왼쪽의 그래프는 정점과 가중치 있는 간선으로 구성되어 있으며, 오른쪽의 인접 리스트는 각 정점에 연결된 이웃 정점과 간선의 가중치를 나타냄 
 
 
@@ -6321,7 +6321,7 @@ class Prim {
 - 장점: 빠르게 데이터를 검색하고 저장할 수 있음
 - 단점: 메모리 효율성 낮음
 
-![Image](img/hashtable.png)
+![Image](./image/hashtable.png)
 > 위 그림은 a,b,c,d의 키가 해시 함수에 의해 특정 버킷(0,1,2,3)으로 매핑되고 해당 버킷에 데이터가 저장되는 과정을 보여줌 
 
 ### 해시 함수
