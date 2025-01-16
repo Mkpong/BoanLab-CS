@@ -8,8 +8,6 @@
 
 ### 버블 정렬 (Bubble Sort)
 
-![](./image/1.png)
-
 **정의:**
 - 인접한 두 요소를 비교하여 정렬을 수행
 - 정렬이 완료될 때까지 반복하여 수행
@@ -35,35 +33,12 @@
 **활용:**
 - 소규모 데이터의 간단한 정렬에 사용
 
-**실습 코드**
-<details>
-  <summary>Bubble Sort - Python</summary>
-  
-  ```python
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        # 마지막 i개의 요소는 이미 정렬된 상태이므로 제외
-        for j in range(0, n - i - 1):
-            # 인접한 요소를 비교하고, 필요하면 교환
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
-
-# 테스트
-data = [64, 34, 25, 12, 22, 11, 90]
-print("Unsorted array:", data)
-
-sorted_data = bubble_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
+![bubble](./image/1.png)
+>위 그림은 버블 정렬 방법의 실행 과정을 보여줌
 
 ---
 
 ### 선택 정렬 (Selection Sort)
-
-![](./image/2.png)
 
 **정의:**
 - 리스트에서 가장 작은 요소를 선택하여 정렬 수행
@@ -89,37 +64,12 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 데이터 이동이 적은 경우 적합
 
-**실습 코드**
-<details>
-  <summary>Selection Sort - Python</summary>
-  
-  ```python
-def selection_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        # 현재 정렬되지 않은 부분에서 최소값을 찾음
-        min_index = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        # 최소값을 현재 위치로 스왑
-        arr[i], arr[min_index] = arr[min_index], arr[i]
-    return arr
-
-# 테스트
-data = [64, 25, 12, 22, 11]
-print("Unsorted array:", data)
-
-sorted_data = selection_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
+![select](./image/2.png)
+>위 그림은 선택정렬 방식의 실행 과정을 보여줌 
 
 ---
 
 ### 삽입 정렬 (Insertion Sort)
-
-![](./image/3.png)
 
 **정의:**
 - 각 요소를 적절한 위치에 삽입하여 정렬 수행
@@ -145,41 +95,13 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 데이터가 거의 정렬된 경우 적합
 
-**실습 코드**
-<details>
-  <summary>Insertion Sort - Python</summary>
-  
-  ```python
-def insertion_sort(arr):
-    # 첫 번째 요소는 이미 정렬된 것으로 간주하므로 두 번째 요소부터 시작
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
+![insert](./image/3.png)
+>위 그림은 기본정렬 방식의 실행 과정을 보여줌 
 
-        # key 값이 정렬된 부분의 값보다 작으면 위치를 이동
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
-            j -= 1
-
-        # key 값을 올바른 위치에 삽입
-        arr[j + 1] = key
-
-    return arr
-
-# 테스트
-data = [12, 11, 13, 5, 6]
-print("Unsorted array:", data)
-
-sorted_data = insertion_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
-
+---
 ## 고급 정렬 알고리즘
 
 ### 병합 정렬 (Merge Sort)
-
-![](./image/4.png)
 
 **정의:**
 - 분할 정복(divide and conquer) 방식의 정렬 알고리즘
@@ -205,64 +127,12 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 대규모 데이터 정렬에 적합
 
-**실습 코드**
-<details>
-  <summary>Merge Sort - Python</summary>
-  
-  ```python
-def merge_sort(arr):
-    if len(arr) > 1:
-        # 배열을 두 개로 나누기
-        mid = len(arr) // 2
-        left_half = arr[:mid]
-        right_half = arr[mid:]
-
-        # 각각 재귀적으로 정렬
-        merge_sort(left_half)
-        merge_sort(right_half)
-
-        # 두 개의 정렬된 배열을 병합
-        i = j = k = 0
-
-        # 작은 값을 차례로 삽입
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
-                i += 1
-            else:
-                arr[k] = right_half[j]
-                j += 1
-            k += 1
-
-        # 왼쪽 배열에 남은 값을 삽입
-        while i < len(left_half):
-            arr[k] = left_half[i]
-            i += 1
-            k += 1
-
-        # 오른쪽 배열에 남은 값을 삽입
-        while j < len(right_half):
-            arr[k] = right_half[j]
-            j += 1
-            k += 1
-
-    return arr
-
-# 테스트
-data = [38, 27, 43, 3, 9, 82, 10]
-print("Unsorted array:", data)
-
-sorted_data = merge_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
-
+![merge](./image/4.png)
+>위 그림은 배열을 분리해서 정렬 후 다시 병합하는 과정을 보여줌 
 
 ---
 
 ### 퀵 정렬 (Quick Sort)
-
-![](./image/5.png)
 
 **정의:**
 - 분할 정복 방식의 효율적인 정렬 알고리즘
@@ -288,38 +158,12 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 데이터 크기가 큰 경우 적합
 
-**실습 코드**
-<details>
-  <summary>Quick Sort - Python</summary>
-  
-  ```python
-def quick_sort(arr):
-    # 배열의 길이가 1 이하인 경우 이미 정렬된 상태
-    if len(arr) <= 1:
-        return arr
-
-    # 피벗 선택 (여기서는 배열의 마지막 요소를 피벗으로 선택)
-    pivot = arr[-1]
-    left = [x for x in arr[:-1] if x <= pivot]  # 피벗보다 작거나 같은 값
-    right = [x for x in arr[:-1] if x > pivot]  # 피벗보다 큰 값
-
-    # 재귀적으로 정렬 후 병합
-    return quick_sort(left) + [pivot] + quick_sort(right)
-
-# 테스트
-data = [10, 80, 30, 90, 40, 50, 70]
-print("Unsorted array:", data)
-
-sorted_data = quick_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
+![quick](./image/5.png)
+>위 그림은 Pivot을 이용하여 정렬하는 실행 과정을 보여줌 
 
 ---
 
 ### 힙 정렬 (Heap Sort)
-
-![](./image/6.png)
 
 **정의:**
 - 힙 자료구조를 이용한 정렬 알고리즘
@@ -345,57 +189,12 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 메모리 사용이 제한적인 경우 적합
 
-**실습 코드**
-<details>
-  <summary>Heap Sort - Python</summary>
-  
-  ```python
-def heapify(arr, n, i):
-    largest = i  # 루트를 가장 큰 값으로 초기화
-    left = 2 * i + 1  # 왼쪽 자식 노드
-    right = 2 * i + 2  # 오른쪽 자식 노드
-
-    # 왼쪽 자식이 루트보다 크면 largest 업데이트
-    if left < n and arr[left] > arr[largest]:
-        largest = left
-
-    # 오른쪽 자식이 largest보다 크면 largest 업데이트
-    if right < n and arr[right] > arr[largest]:
-        largest = right
-
-    # largest가 루트가 아니라면 스왑 후 재귀적으로 힙 구조 재정렬
-    if largest != i:
-        arr[i], arr[largest] = arr[largest], arr[i]
-        heapify(arr, n, largest)
-
-def heap_sort(arr):
-    n = len(arr)
-
-    # 배열을 최대 힙으로 변환
-    for i in range(n // 2 - 1, -1, -1):
-        heapify(arr, n, i)
-
-    # 하나씩 힙에서 요소를 추출하여 정렬
-    for i in range(n - 1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]  # 현재 루트(최대값)과 끝 요소를 교환
-        heapify(arr, i, 0)  # 남은 힙에 대해 재정렬
-
-    return arr
-
-# 테스트
-data = [12, 11, 13, 5, 6, 7]
-print("Unsorted array:", data)
-
-sorted_data = heap_sort(data)
-print("Sorted array:", sorted_data)
-  ```
-</details>
+![heap](./image/6.png)
+>위 그림은 배열을 힙으로 정렬하는 과정을 보여줌 
 
 ---
 
 ### 기수 정렬 (Radix Sort)
-
-![](./image/14.png)
 
 **정의:**
 - 자리수를 기준으로 정렬하는 비비교 기반 정렬 알고리즘
@@ -445,6 +244,8 @@ print("Sorted array:", sorted_data)
 **활용:**
 - 데이터 값이 제한적인 경우 적합
 
+![image](./image/14.png)
+>위 그림은 num값의 누적계수를 기반으로 인덱스를 일치시켜 정렬하는 방식을 보여줌
 ---
 
 ### 셸 정렬 (Shell Sort)
@@ -512,8 +313,6 @@ print("Sorted array:", sorted_data)
 
 ### 선형 탐색 (Linear Search)
 
-![](./image/7.png)
-
 - **정의**: 데이터를 처음부터 끝까지 순차적으로 탐색하여 원하는 값을 찾는 알고리즘
 - **특징**:
   - 단순하고 구현이 쉬움
@@ -531,36 +330,13 @@ print("Sorted array:", sorted_data)
   - 데이터가 많을수록 성능 저하
 - **활용**:
   - 소규모 데이터나 정렬되지 않은 데이터에서 사용
- 
-**실습 코드**
-<details>
-  <summary>Linear Search - Python</summary>
-  
-  ```python
-def linear_search(arr, target):
-    # 배열의 각 요소를 순차적으로 확인
-    for i in range(len(arr)):
-        if arr[i] == target:  # 대상 값을 찾으면 인덱스 반환
-            return i
-    return -1  # 대상 값이 없으면 -1 반환
 
-# 테스트
-data = [10, 20, 30, 40, 50]
-target = 30
-
-result = linear_search(data, target)
-if result != -1:
-    print(f"Element found at index {result}")
-else:
-    print("Element not found")
-  ```
-</details>
+![linear](./image/7.png)
+> 위 그림은 순차적 탐색을 통해 29를 찾는 과정을 보여줌 
 
 ---
 
 ### 이진 탐색 (Binary Search)
-
-![](./image/8.png)
 
 - **정의**: 정렬된 데이터에서 중간 값을 기준으로 탐색 범위를 절반씩 줄이며 값을 찾는 알고리즘
 - **특징**:
@@ -579,51 +355,9 @@ else:
   - 데이터가 정렬되어 있지 않다면 사용 불가
 - **활용**:
   - 정렬된 데이터에서 효율적으로 탐색할 때 사용
- 
-**실습 코드**
-<details>
-  <summary>Binary Search - Python</summary>
-  
-  ```python
-def binary_search_recursive(arr, target, low, high):
-    if low > high:
-        return -1  # 대상 값이 없으면 -1 반환
 
-    mid = (low + high) // 2  # 중간 인덱스 계산
-
-    if arr[mid] == target:
-        return mid  # 대상 값 찾음
-    elif arr[mid] > target:
-        return binary_search_recursive(arr, target, low, mid - 1)  # 왼쪽 절반 탐색
-    else:
-        return binary_search_recursive(arr, target, mid + 1, high)  # 오른쪽 절반 탐색
-
-def binary_search_iterative(arr, target):
-    low, high = 0, len(arr) - 1
-
-    while low <= high:
-        mid = (low + high) // 2  # 중간 인덱스 계산
-
-        if arr[mid] == target:
-            return mid  # 대상 값 찾음
-        elif arr[mid] > target:
-            high = mid - 1  # 왼쪽 절반으로 범위 줄이기
-        else:
-            low = mid + 1  # 오른쪽 절반으로 범위 줄이기
-
-    return -1  # 대상 값이 없으면 -1 반환
-
-# 테스트
-data = [10, 20, 30, 40, 50, 60]
-target = 30
-
-result = binary_search_recursive(data, target, 0, len(data) - 1)
-if result != -1:
-    print(f"Element found at index {result}")
-else:
-    print("Element not found")
-  ```
-</details>
+![binary](./image/8.png)
+>위 그림은 데이터의 중간값을 기준으로 정렬하는 과정을 보여줌 
 
 ---
 
@@ -666,87 +400,6 @@ else:
   - 트리가 불균형할 경우 성능 저하
 - **활용**:
   - 동적 데이터 탐색 및 관리
- 
-**실습 코드**
-<details>
-  <summary>Binary Search Tree - Python</summary>
-  
-  ```python
-class Node:
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
-
-class BinarySearchTree:
-    def __init__(self):
-        self.root = None
-
-    # 삽입 함수
-    def insert(self, key):
-        if self.root is None:
-            self.root = Node(key)
-        else:
-            self._insert(self.root, key)
-
-    def _insert(self, current, key):
-        if key < current.key:  # 왼쪽에 삽입
-            if current.left is None:
-                current.left = Node(key)
-            else:
-                self._insert(current.left, key)
-        elif key > current.key:  # 오른쪽에 삽입
-            if current.right is None:
-                current.right = Node(key)
-            else:
-                self._insert(current.right, key)
-
-    # 탐색 함수
-    def search(self, key):
-        return self._search(self.root, key)
-
-    def _search(self, current, key):
-        if current is None:
-            return False  # 키를 찾을 수 없음
-        if key == current.key:
-            return True  # 키를 찾음
-        elif key < current.key:
-            return self._search(current.left, key)  # 왼쪽 서브트리 탐색
-        else:
-            return self._search(current.right, key)  # 오른쪽 서브트리 탐색
-
-    # 중위 순회 (Inorder Traversal)
-    def inorder(self):
-        result = []
-        self._inorder(self.root, result)
-        return result
-
-    def _inorder(self, current, result):
-        if current:
-            self._inorder(current.left, result)  # 왼쪽 서브트리
-            result.append(current.key)          # 현재 노드
-            self._inorder(current.right, result)  # 오른쪽 서브트리
-
-# 이진 검색 트리 생성
-bst = BinarySearchTree()
-
-# 노드 삽입
-bst.insert(50)
-bst.insert(30)
-bst.insert(70)
-bst.insert(20)
-bst.insert(40)
-bst.insert(60)
-bst.insert(80)
-
-# 탐색 테스트
-print("Search 40:", bst.search(40))  # True
-print("Search 25:", bst.search(25))  # False
-
-# 중위 순회 결과 출력 (오름차순 정렬된 결과)
-print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
-  ```
-</details>
 
 ---
 
@@ -767,14 +420,6 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
   - 충돌 관리가 필요하며, 해시 함수 설계에 따라 성능이 좌우됨
 - **활용**:
   - 키-값 쌍 기반 데이터 검색 (예: 해시 테이블)
- 
-**실습 코드**
-<details>
-  <summary>Hash-based Search - Python</summary>
-  
-  ```python
-  ```
-</details>
 
 ---
 
@@ -1027,14 +672,6 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - N 값이 클수록 탐색 시간이 증가
 
-**실습 코드**
-<details>
-  <summary>N-Queens - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 #### Sudoku Solver
 
 **정의:**
@@ -1050,15 +687,6 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 
 **단점:**
 - 퍼즐이 복잡할수록 탐색 시간이 증가
-
-**실습 코드**
-<details>
-  <summary>Sudoku Solver - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 # 그리디 알고리즘 (Greedy Algorithm)
 
 ## 개념 및 특징
@@ -1105,14 +733,6 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - 특정 동전 조합에서는 최적해가 되지 않을 수 있음
 
-**실습 코드**
-<details>
-  <summary>Coin Change Problem - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 ---
 
 ### 활동 선택 문제 (Activity Selection Problem)
@@ -1134,53 +754,14 @@ print("Inorder Traversal:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 **단점:**
 - 정렬 과정이 필요하여 초기 오버헤드 발생 가능
 
-**실습 코드**
-<details>
-  <summary>Activity Selection Problem - Python</summary>
-  
-  ```python
-def activity_selection(activities):
-    # 종료 시간을 기준으로 활동 정렬
-    activities.sort(key=lambda x: x[1])
-
-    selected_activities = []  # 선택된 활동 저장
-    last_end_time = 0  # 마지막으로 선택된 활동의 종료 시간
-
-    for activity in activities:
-        start, end = activity
-        # 현재 활동이 마지막으로 선택된 활동과 겹치지 않는 경우 선택
-        if start >= last_end_time:
-            selected_activities.append(activity)
-            last_end_time = end
-
-    return selected_activities
-
-# 테스트
-activities = [
-    (1, 4),  # 활동 1: 시작 시간 1, 종료 시간 4
-    (3, 5),  # 활동 2
-    (0, 6),  # 활동 3
-    (5, 7),  # 활동 4
-    (3, 8),  # 활동 5
-    (5, 9),  # 활동 6
-    (6, 10), # 활동 7
-    (8, 11), # 활동 8
-    (8, 12), # 활동 9
-    (2, 13), # 활동 10
-    (12, 14) # 활동 11
-]
-
-result = activity_selection(activities)
-print("Selected activities:", result)
-  ```
-</details>
-
 ---
 
 ### 최소 신장 트리 (MST: Minimum Spanning Tree)
 
 **정의:**
 - 그래프에서 모든 정점을 연결하면서 간선 가중치의 합이 최소가 되는 트리를 찾는 문제
+![mst](./image/9.png)
+>위 그림은 간선의 가중치의 합이 최소가 되도록 찾는 과정을 보여줌 
 
 #### 크루스칼 알고리즘 (Kruskal's Algorithm)
 
@@ -1199,6 +780,9 @@ print("Selected activities:", result)
 **단점:**
 - 간선 정렬 과정이 필요
 
+![krus](./image/10.png)
+>위 그림은 기존 트리에서 가중치가 작은 것부터 선택하여 트리를 완성하는 과정을 보여줌 
+
 #### 프림 알고리즘 (Prim's Algorithm)
 
 **동작 방식:**
@@ -1215,6 +799,9 @@ print("Selected activities:", result)
 
 **단점:**
 - 우선순위 큐를 사용해야 효율적임
+
+![prim](./image/11.png)
+>위 그림은 정점하나를 기준으로 트리를 만들어나가는 과정을 보여줌 
 
 ---
 
@@ -1368,14 +955,6 @@ print("Selected activities:", result)
 **활용:**
 - 자원 최적화, 비용 최소화 문제
 
-**실습 코드**
-<details>
-  <summary>Knapsack Problem - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 ---
 
 ### 최장 공통 부분 수열 (LCS: Longest Common Subsequence)
@@ -1401,14 +980,6 @@ print("Selected activities:", result)
 **활용:**
 - DNA 서열 분석, 텍스트 편집기 구현
 
-**실습 코드**
-<details>
-  <summary>LCS - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 ---
 
 ### 최장 증가 부분 수열 (LIS: Longest Increasing Subsequence)
@@ -1432,14 +1003,6 @@ print("Selected activities:", result)
 
 **활용:**
 - 데이터 분석, 패턴 인식
-
-**실습 코드**
-<details>
-  <summary>LIS - Python</summary>
-  
-  ```python
-  ```
-</details>
 
 ---
 
@@ -1465,15 +1028,6 @@ print("Selected activities:", result)
 
 **활용:**
 - 네트워크 경로 최적화, 지도 데이터 처리
-
-**실습 코드**
-<details>
-  <summary>Floyd Warshall - Python</summary>
-  
-  ```python
-  ```
-</details>
-
 ---
 # 그래프 알고리즘 (Graph Algorithms)
 
@@ -1503,6 +1057,9 @@ print("Selected activities:", result)
 **활용:**
 - 미로 찾기, 사이클 검출, 강연결 요소 탐색
 
+![dfs](./image/12.png)
+>위 그림은 가장 상단 트리에서 부터 가장 하단 트리까지 도달하는 과정을 보여줌 
+
 ---
 
 ### 너비 우선 탐색 (BFS: Breadth-First Search)
@@ -1527,6 +1084,9 @@ print("Selected activities:", result)
 
 **활용:**
 - 최단 경로 탐색, 레벨별 탐색
+
+![bfs](./image/13.png)
+>위 그림은 가장 왼쪽 트리부터 가장 오른쪽 트리까지 도달하는 과정을 보여줌 
 
 ---
 
@@ -1761,14 +1321,6 @@ print("Selected activities:", result)
 
 **활용:**
 - 텍스트 에디터 검색 기능, 문자열 매칭 문제
-
-**실습 코드**
-<details>
-  <summary>KMP - Python</summary>
-  
-  ```python
-  ```
-</details>
 
 ---
 
@@ -2351,4 +1903,4 @@ print("Selected activities:", result)
 - 알고리즘이 다양한 상황에서 어떻게 동작하는지 평가
 
 **예시:**
-- 정렬 알고리즘에서 최선, 평균, 최악의 경
+- 정렬 알고리즘에서 최선, 평균, 최악의 경우 시간 복잡도 비교
